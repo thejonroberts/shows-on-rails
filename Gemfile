@@ -38,7 +38,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'activerecord-postgis-adapter'
-gem "haml-rails", "~> 2.0"
+gem 'devise'
+gem 'haml-rails', '~> 2.0'
 gem 'webpacker', '~> 4.x'
 
 group :development, :test do
