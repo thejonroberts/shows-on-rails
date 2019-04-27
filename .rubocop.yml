@@ -4,3 +4,4 @@ AllCops:
     - db/schema.rb
     - db/migrate/**/*
     - node_modules/**/*
+    - bin/**/*
