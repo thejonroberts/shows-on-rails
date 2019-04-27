@@ -3,7 +3,7 @@
 %table
   %thead
     %tr
-      %th Addressable
+      -# %th Addressable
       %th Line one
       %th Line two
       %th City
@@ -18,7 +18,7 @@
   %tbody
     - @addresses.each do |address|
       %tr
-        %td= address.addressable
+        -# %td= address.addressable
         %td= address.line_one
         %td= address.line_two
         %td= address.city

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'addresses/show', type: :view do
   before(:each) do
     @address = assign(:address, Address.create!(
-                                  addressable: nil,
+                                  # addressable: nil,
                                   line_one: 'Line One',
                                   line_two: 'Line Two',
                                   city: 'City',
