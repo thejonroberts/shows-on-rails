@@ -9,4 +9,8 @@ FactoryBot.define do
     country_code { 'MyString' }
     zip_code { 'MyString' }
   end
+
+  trait :user do
+    addressable { |a| a.association(:user) }
+  end
 end
