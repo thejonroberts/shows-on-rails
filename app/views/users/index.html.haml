@@ -1,2 +1,36 @@
-%h1 Users#index
-%p Find me in app/views/users/index.html.haml
+%h1 Users
+
+%table
+  %thead
+    %tr
+      -# %th Addressable
+      %th Name
+      %th Email
+      %th Phone
+      -# from address
+      -# %th City
+      -# %th State
+      -# %th Country
+      -# %th Country code
+      -# %th Zip code
+      -# %th
+      -# %th
+      %th
+
+  %tbody
+    - @users.each do |user|
+      %tr
+        -# %td= "#{user.first_name} #{user.last_name}"
+        %td Name Placeholder
+        %td Email Placeholder
+        %td Phone Placeholder
+        -# %td= user.email
+        -# %td= user.phone
+        %td= link_to 'Show', user
+        -# TODO: admin only:
+        -# %td= link_to 'Edit', edit_user_path(user)
+        -# %td= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to('New User', 'users/sign_up', {})
