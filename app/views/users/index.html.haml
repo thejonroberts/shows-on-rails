@@ -3,29 +3,22 @@
 %table
   %thead
     %tr
-      -# %th Addressable
+      %th User
       %th Name
       %th Email
       %th Phone
-      -# from address
       -# %th City
       -# %th State
       -# %th Country
-      -# %th Country code
-      -# %th Zip code
-      -# %th
-      -# %th
       %th
 
   %tbody
     - @users.each do |user|
       %tr
-        -# %td= "#{user.first_name} #{user.last_name}"
-        %td Name Placeholder
-        %td Email Placeholder
-        %td Phone Placeholder
-        -# %td= user.email
-        -# %td= user.phone
+        %td= user.display_name
+        %td= "#{user.first_name} #{user.last_name}"
+        %td= user.email
+        %td= user.phone
         %td= link_to 'Show', user
         -# TODO: admin only:
         -# %td= link_to 'Edit', edit_user_path(user)

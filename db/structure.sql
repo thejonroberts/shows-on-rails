@@ -111,7 +111,11 @@ CREATE TABLE public.users (
     unlock_token character varying,
     locked_at timestamp without time zone,
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    first_name character varying,
+    last_name character varying,
+    display_name character varying,
+    phone character varying
 );
 
 
@@ -224,6 +228,7 @@ SET search_path TO public;
 INSERT INTO "schema_migrations" (version) VALUES
 ('20190420075439'),
 ('20190426012544'),
-('20190427174041');
+('20190427174041'),
+('20190429052641');
 
 

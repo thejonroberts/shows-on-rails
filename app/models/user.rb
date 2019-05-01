@@ -5,5 +5,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :confirmable, :lockable,
          :recoverable, :rememberable, :validatable, :trackable, :timeoutable
 
-  # has_many :addresses, as: :addressable
+  has_many :addresses, as: :addressable
 end
