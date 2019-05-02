@@ -7,9 +7,7 @@
       %th Name
       %th Email
       %th Phone
-      -# %th City
-      -# %th State
-      -# %th Country
+      %th Location
       %th
 
   %tbody
@@ -19,11 +17,9 @@
         %td= "#{user.first_name} #{user.last_name}"
         %td= user.email
         %td= user.phone
-        %td= link_to 'Show', user
-        -# TODO: admin only:
-        -# %td= link_to 'Edit', edit_user_path(user)
-        -# %td= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= user.address.present? ? "#{user.address.city}, #{user.address.state} #{user.address.country}" : 'N/A'
+        %td= link_to 'View', user
 
 %br
 
-= link_to('New User', 'users/sign_up', {})
+%span= link_to('New User', 'users/sign_up', {})

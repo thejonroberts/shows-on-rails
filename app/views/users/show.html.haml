@@ -10,17 +10,17 @@
 %p
   %b Email:
   = @user.email
-- if @user.addresses.present?
-  -@user.addresses.each do |address|
-    %p
-      %b City:
-      = address.city
-    %p
-      %b State:
-      = address.state
-    %p
-      %b Country:
-      = address.country
+%p
+  %b Location:
+- if @user.address.present?
+  = "#{@user.address.city}, #{@user.address.state} #{@user.address.country}"
+- else
+  Unknown
+
+%br
+
+- if @user.id = current_user
+  = link_to('Edit', edit_user_path, {})
 
 \|
 = link_to 'Back', users_path

@@ -2,7 +2,7 @@
 Rails.application.routes.draw do
   resources :addresses
   devise_for :users
-  resources :users, only: [:show, :index]
+  resources :users, only: [:index, :show, :edit, :update]
 
   root 'home#index'
 end

@@ -5,5 +5,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :confirmable, :lockable,
          :recoverable, :rememberable, :validatable, :trackable, :timeoutable
 
-  has_many :addresses, as: :addressable
+  has_one :address, as: :addressable, dependent: :destroy
+  accepts_nested_attributes_for :address
 end
