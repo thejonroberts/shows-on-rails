@@ -4,12 +4,12 @@
   %thead
     %tr
       -# %th Addressable
-      %th Line one
-      %th Line two
+      -# %th Line one
+      -# %th Line two
       %th City
       %th State
       %th Country
-      %th Country code
+      -# %th Country code
       %th Zip code
       %th
       %th
@@ -19,12 +19,12 @@
     - @addresses.each do |address|
       %tr
         -# %td= address.addressable
-        %td= address.line_one
-        %td= address.line_two
+        -# %td= address.line_one
+        -# %td= address.line_two
         %td= address.city
         %td= address.state
         %td= address.country
-        %td= address.country_code
+        -# %td= address.country_code
         %td= address.zip_code
         %td= link_to 'Show', address
         %td= link_to 'Edit', edit_address_path(address)
