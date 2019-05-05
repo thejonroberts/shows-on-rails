@@ -67,8 +67,11 @@ class AddressesController < ApplicationController
     @address = Address.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
+  # Never trust parameters from the internet, only allow the white list through.
   def address_params
-    params.require(:address).permit(:addressable_id, :line_one, :line_two, :city, :state, :country, :country_code, :zip_code)
+    params
+      .require(:address)
+      .permit(:addressable_id, :line_one, :line_two, :city, :state, :country,
+              :country_code, :zip_code)
   end
 end

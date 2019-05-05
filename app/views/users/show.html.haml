@@ -15,10 +15,11 @@
 - if @user.address.present?
   = "#{@user.address.city}, #{@user.address.state} #{@user.address.country}"
 - else
-  Unknown
+  %b Unknown
 
 %br
 
+-# TODO: admin role / superuser can edit any
 - if @user.id = current_user
   = link_to('Edit', edit_user_path, {})
 

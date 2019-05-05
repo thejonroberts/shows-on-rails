@@ -115,7 +115,8 @@ CREATE TABLE public.users (
     first_name character varying,
     last_name character varying,
     display_name character varying,
-    phone character varying
+    phone character varying,
+    address_id bigint
 );
 
 
@@ -139,6 +140,41 @@ ALTER SEQUENCE public.users_id_seq OWNED BY public.users.id;
 
 
 --
+-- Name: venues; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.venues (
+    id bigint NOT NULL,
+    name character varying NOT NULL,
+    site_url character varying,
+    phone character varying,
+    email character varying,
+    address_id bigint,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: venues_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.venues_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: venues_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.venues_id_seq OWNED BY public.venues.id;
+
+
+--
 -- Name: addresses id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -150,6 +186,13 @@ ALTER TABLE ONLY public.addresses ALTER COLUMN id SET DEFAULT nextval('public.ad
 --
 
 ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_id_seq'::regclass);
+
+
+--
+-- Name: venues id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.venues ALTER COLUMN id SET DEFAULT nextval('public.venues_id_seq'::regclass);
 
 
 --
@@ -185,10 +228,25 @@ ALTER TABLE ONLY public.users
 
 
 --
+-- Name: venues venues_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.venues
+    ADD CONSTRAINT venues_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: index_addresses_on_addressable_type_and_addressable_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_addresses_on_addressable_type_and_addressable_id ON public.addresses USING btree (addressable_type, addressable_id);
+
+
+--
+-- Name: index_users_on_address_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_users_on_address_id ON public.users USING btree (address_id);
 
 
 --
@@ -220,6 +278,29 @@ CREATE UNIQUE INDEX index_users_on_unlock_token ON public.users USING btree (unl
 
 
 --
+-- Name: index_venues_on_address_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_venues_on_address_id ON public.venues USING btree (address_id);
+
+
+--
+-- Name: venues fk_rails_07c8eb3ba9; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.venues
+    ADD CONSTRAINT fk_rails_07c8eb3ba9 FOREIGN KEY (address_id) REFERENCES public.addresses(id);
+
+
+--
+-- Name: users fk_rails_eb2fc738e4; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.users
+    ADD CONSTRAINT fk_rails_eb2fc738e4 FOREIGN KEY (address_id) REFERENCES public.addresses(id);
+
+
+--
 -- PostgreSQL database dump complete
 --
 
@@ -229,6 +310,8 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20190420075439'),
 ('20190426012544'),
 ('20190427174041'),
-('20190429052641');
+('20190429052641'),
+('20190502075201'),
+('20190504033730');
 
 
