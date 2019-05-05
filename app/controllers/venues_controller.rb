@@ -14,10 +14,15 @@ class VenuesController < ApplicationController
   # GET /venues/new
   def new
     @venue = Venue.new
+    @venue.build_address
   end
 
   # GET /venues/1/edit
-  def edit; end
+  def edit
+    return unless @venue.address.nil?
+
+    @venue.build_address
+  end
 
   # POST /venues
   # POST /venues.json

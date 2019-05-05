@@ -16,7 +16,11 @@ class UsersController < ApplicationController
   # NOTE: Devise handles this at /users/regigstration
 
   # GET /users/1/edit
-  def edit; end
+  def edit
+    return unless @user.address.nil?
+
+    @user.build_address
+  end
 
   # POST /users
   # POST /users.json
