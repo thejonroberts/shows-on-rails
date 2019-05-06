@@ -5,9 +5,9 @@
     %title Shows
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload', async: true
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', async: true
+    = stylesheet_pack_tag 'stylesheets', 'data-turbolinks-track': 'reload', async: true
+    -# = stylesheet_pack_tag 'stylesheets', 'data-turbolinks-track': 'reload' unless Webpacker.dev_server.hot_module_replacing?
   %body
     = render('/shared/navbar')
     %p.notice= notice

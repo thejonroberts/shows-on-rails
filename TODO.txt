@@ -20,3 +20,6 @@ Created by user id for user generated content:
     - or transfer to admin / default user?  unmanaged scope?
 
 PIctures - most models
+
+eslint
+nvmrc
