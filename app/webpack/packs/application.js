@@ -31,6 +31,6 @@ require('../javascript/channels'); // ActionCable channels
 require('../javascript/components');
 
 // class App {
-  console.log('Hello World from Webpacker');
+  console.log('Hello World from Webpacker tes');
 // }
 
