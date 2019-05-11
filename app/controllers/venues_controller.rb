@@ -1,3 +1,4 @@
+# Controller for Venues base
 class VenuesController < ApplicationController
   before_action :set_venue, only: [:show, :edit, :update, :destroy]
 
