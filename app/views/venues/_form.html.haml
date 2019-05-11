@@ -1,0 +1,41 @@
+= form_for @venue do |f|
+  - if @venue.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@venue.errors.count, "error")} prohibited this venue from being saved:"
+      %ul
+        - @venue.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :site_url
+    = f.text_field :site_url
+  .field
+    = f.label :phone
+    = f.text_field :phone
+  .field
+    = f.label :email
+    = f.text_field :email
+  %p Address
+  = f.fields_for :address do |a|
+    .field
+      = a.label :line_one
+      = a.text_field :line_one
+    .field
+      = a.label :line_two
+      = a.text_field :line_two
+    .field
+      = a.label :city
+      = a.text_field :city
+    .field
+      = a.label :state
+      = a.text_field :state
+    .field
+      = a.label :country
+      = a.text_field :country
+    .field
+      = a.label :zip_code
+      = a.text_field :zip_code
+  .actions
+    = f.submit 'Save'

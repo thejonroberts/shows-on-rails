@@ -1,0 +1,26 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @venue.name
+%p
+  %b Site url:
+  = @venue.site_url
+%p
+  %b Phone:
+  = @venue.phone
+%p
+  %b Email:
+  = @venue.email
+%p
+  %b Location:
+- if @venue.address.present?
+  = "#{@venue.address.city}, #{@venue.address.state} #{@venue.address.country}"
+- else
+  %b Unknown
+
+%br
+
+= link_to 'Edit', edit_venue_path(@venue)
+\|
+= link_to 'Back', venues_path

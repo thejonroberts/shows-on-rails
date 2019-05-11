@@ -1,0 +1,19 @@
+%nav{ role: :navigation }
+  %ul
+    %li
+      %img{ src: 'https://picsum.photos/40/40'}
+    %li
+      = link_to('Users', '/users', {})
+    %li
+      = link_to('Addresses', '/addresses', {})
+    %li
+      = link_to('Venues', '/venues', {})
+  %ul
+    %li
+      = link_to('Account', '/users/edit', {})
+    %li
+      = link_to('Sign Out', '/users/sign_out', {})
+    %li
+      = link_to('Sign In', '/users/sign_in', {})
+    %li
+      = link_to('Sign Up', '/users/sign_up', {})

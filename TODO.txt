@@ -1,0 +1,25 @@
+fix rubocop auto-config todo formatting issues (from rails new)
+
+
+Phone number standardization
+  current address country_code works?  put on user / add user method.
+  https://github.com/joost/phony_rails
+
+Soft deletion of records
+  https://github.com/jhawthorn/discard (vs. paranoia gem)
+  - most of them?
+
+Venue + User contact options - by_phone by_email
+
+Null: false to migrations???
+
+Created by user id for user generated content:
++ managed_by_user_id
+  - venues, bands, etc..
+  - will require soft_deletion of users?
+    - or transfer to admin / default user?  unmanaged scope?
+
+PIctures - most models
+
+eslint
+nvmrc

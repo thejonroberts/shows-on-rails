@@ -5,8 +5,9 @@ require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
-require 'database_cleaner'
 # Add additional requires below this line. Rails is not loaded until this point!
+require 'database_cleaner'
+require 'devise'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -61,9 +62,11 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 
   config.include FactoryBot::Syntax::Methods
+  config.include Devise::Test::ControllerHelpers, type: :controller
 
   config.before(:suite) do
-    DatabaseCleaner.clean_with(:truncation)
+    # NOTE: truncation needs to exclude postgis tables, if necessary at all
+    # DatabaseCleaner.clean_with(:truncation, except: %w[us_gaz])
     DatabaseCleaner.strategy = :transaction
   end
 
