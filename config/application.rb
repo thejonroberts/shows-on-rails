@@ -18,5 +18,7 @@ module Shows
 
     # use structure.sql
     config.active_record.schema_format = :sql
+
+    config.generators.template_engine = :haml
   end
 end
