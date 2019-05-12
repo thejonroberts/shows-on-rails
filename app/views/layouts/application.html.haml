@@ -1,11 +1,12 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Shows
     = csrf_meta_tags
     = csp_meta_tag
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', async: true
+    = stylesheet_pack_tag 'vendor', 'data-turbolinks-track': 'reload', async: true
     = stylesheet_pack_tag 'stylesheets', 'data-turbolinks-track': 'reload', async: true
     -# = stylesheet_pack_tag 'stylesheets', 'data-turbolinks-track': 'reload' unless Webpacker.dev_server.hot_module_replacing?
   %body

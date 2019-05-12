@@ -23,3 +23,8 @@ PIctures - most models
 
 eslint
 nvmrc
+
+use tachyons cdn in production
+
+account info - devise - user account route???
+  - fix nav sign_out link
