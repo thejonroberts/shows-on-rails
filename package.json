@@ -26,6 +26,7 @@
     "turbolinks": "^5.2.0"
   },
   "devDependencies": {
+    "tachyons": "^4.11.1",
     "tachyons-sass": "^4.9.5",
     "webpack-dev-server": "^3.3.1"
   }
