@@ -1,4 +1,4 @@
-%h1 Venues
+%h2 Venues
 
 %table
   %tr
@@ -8,8 +8,9 @@
     %th Email
     %th Location
     %th
-    %th
-    %th
+    - if current_user&.superuser?
+      %th
+      %th
 
   - @venues.each do |venue|
     %tr
@@ -18,10 +19,11 @@
       %td= venue.phone
       %td= venue.email
       %td= venue.address.present? ? "#{venue.address.city}, #{venue.address.state} #{venue.address.country}" : 'N/A'
-      %td= link_to 'Show', venue
-      %td= link_to 'Edit', edit_venue_path(venue)
-      -# TODO: access control - managed_by_user ? soft delete?
-      %td= link_to 'Destroy', venue, method: :delete, data: { confirm: 'Are you sure?' }
+      %td= link_to 'View', venue
+      - if current_user&.superuser?
+        %td= link_to 'Edit', edit_venue_path(venue)
+        -# TODO: access control - managed_by_user ? soft delete?
+        %td= link_to 'Destroy', venue, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 

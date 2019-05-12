@@ -1,4 +1,4 @@
-%h1 Addresses
+%h2 Addresses
 
 %table
   %tr
@@ -11,8 +11,9 @@
     -# %th Country code
     %th Zip code
     %th
-    %th
-    %th
+    - if current_user&.superuser?
+      %th
+      %th
 
   - @addresses.each do |address|
     %tr
@@ -24,9 +25,10 @@
       %td= address.country
       -# %td= address.country_code
       %td= address.zip_code
-      %td= link_to 'Show', address
-      %td= link_to 'Edit', edit_address_path(address)
-      %td= link_to 'Destroy', address, method: :delete, data: { confirm: 'Are you sure?' }
+      %td= link_to('View', address)
+      - if current_user&.superuser?
+        %td= link_to 'Edit', edit_address_path(address)
+        %td= link_to 'Destroy', address, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 

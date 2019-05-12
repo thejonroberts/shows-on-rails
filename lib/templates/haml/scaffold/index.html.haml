@@ -1,4 +1,4 @@
-%h1 <%= plural_table_name.titleize %>
+%h2 <%= plural_table_name.titleize %>
 
 %table
   %tr
@@ -6,17 +6,19 @@
     %th <%= attribute.human_name %>
 <% end -%>
     %th
-    %th
-    %th
+    - if current_user&.superuser?
+      %th
+      %th
 
   - @<%= plural_table_name %>.each do |<%= singular_table_name %>|
     %tr
 <% for attribute in attributes -%>
       %td= <%= singular_table_name %>.<%= attribute.name %>
 <% end -%>
-      %td= link_to 'Show', <%= singular_table_name %>
-      %td= link_to 'Edit', edit_<%= singular_table_name %>_path(<%= singular_table_name %>)
-      %td= link_to 'Destroy', <%= singular_table_name %>, method: :delete, data: { confirm: 'Are you sure?' }
+      %td= link_to('Show', <%= singular_table_name %>)
+      - if current_user&.superuser?
+        %td= link_to( 'Edit', edit_<%= singular_table_name %>_path(<%= singular_table_name %>))
+        %td= link_to 'Destroy', <%= singular_table_name %>, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 

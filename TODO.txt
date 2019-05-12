@@ -5,6 +5,10 @@ Phone number standardization
   current address country_code works?  put on user / add user method.
   https://github.com/joost/phony_rails
 
+Address input standardization:
+  country code selection dropdown.
+  verification on upload?
+
 Soft deletion of records
   https://github.com/jhawthorn/discard (vs. paranoia gem)
   - most of them?
@@ -27,7 +31,7 @@ nvmrc
 account info - devise - user account route???
   - fix nav sign_out link
 
-remove comments inwebpacker (sourcemaps?)
+remove comments / uglify js + css in inwebpacker (sourcemaps?)
 
 once deployed:
 https://developers.google.com/speed/pagespeed/insights/
