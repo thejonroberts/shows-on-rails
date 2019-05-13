@@ -1,5 +1,11 @@
 fix rubocop auto-config todo formatting issues (from rails new)
+specs
+admin role - boolean on user.
 
+footer
+
+i18n basics
+  - submit button
 
 Phone number standardization
   current address country_code works?  put on user / add user method.
@@ -35,3 +41,5 @@ remove comments / uglify js + css in inwebpacker (sourcemaps?)
 
 once deployed:
 https://developers.google.com/speed/pagespeed/insights/
+
+logo + favicon

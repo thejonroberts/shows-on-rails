@@ -19,12 +19,19 @@
       %td= venue.phone
       %td= venue.email
       %td= venue.address.present? ? "#{venue.address.city}, #{venue.address.state} #{venue.address.country}" : 'N/A'
-      %td= link_to 'View', venue
+      %td
+        %button
+          = link_to 'View', venue
       - if current_user&.superuser?
-        %td= link_to 'Edit', edit_venue_path(venue)
         -# TODO: access control - managed_by_user ? soft delete?
-        %td= link_to 'Destroy', venue, method: :delete, data: { confirm: 'Are you sure?' }
+        %td
+          %button
+            = link_to 'Edit', edit_venue_path(venue)
+        %td
+          %button
+            = link_to 'Destroy', venue, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 
-= link_to 'New Venue', new_venue_path
+%button
+  = link_to 'New Venue', new_venue_path

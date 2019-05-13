@@ -7,9 +7,11 @@
           %li= message
   .field
     = f.label :name
-    = f.text_field :name
+    = f.text_field(:name, required: true)
+    -# %small#name-desc
+    -#   Helper text for the form control.
   .field
-    = f.label :site_url
+    = f.label(:site_url, 'Website')
     = f.text_field :site_url
   .field
     = f.label :phone
@@ -17,13 +19,13 @@
   .field
     = f.label :email
     = f.text_field :email
-  %p Address
+  %h4 Address
   = f.fields_for :address do |a|
     .field
-      = a.label :line_one
+      = a.label(:line_one, 'Street')
       = a.text_field :line_one
     .field
-      = a.label :line_two
+      = a.label(:line_two, 'Street line two')
       = a.text_field :line_two
     .field
       = a.label :city
@@ -37,5 +39,6 @@
     .field
       = a.label :zip_code
       = a.text_field :zip_code
-  .actions
-    = f.submit 'Save'
+  .actions.measure.flex.items-center.justify-between
+    = render('shared/back_button', url: venues_path, color: 'bg-danger')
+    = f.button

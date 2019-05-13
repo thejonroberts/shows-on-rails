@@ -1,13 +1,9 @@
+// Extend tachyons styles to apply defaults for html elements
 @import 'node_modules/tachyons-sass/tachyons'
 
 // BODY
 body
   @extend .sans-serif
-
-// LINKS
-a
-  @extend .link
-  @extend .dim
 
 //LISTS
 ul
@@ -18,9 +14,28 @@ ul
 img
   @extend .mw-100
 
-// FORMS
-input
-  @extend .input-reset
+  // LINKS
+a
+  @extend .link
+  @extend .dim
+
+// BUTTONS
+button
+  @extend .f6
+  @extend .link
+  @extend .br3
+  @extend .ba
+  @extend .ph3
+  @extend .pv2
+  @extend .mb2
+  @extend .dib
+  margin: 0
+  // defualt colors (from _colors)
+  @extend .bg-secondary
+  @extend .off-white
+
+  a
+    color: inherit
 
 // TABLES
 table
@@ -42,3 +57,29 @@ table
     td
       @extend .pv2
       @extend .ph3
+
+// FORMS
+input
+  @extend .input-reset
+
+form
+  .field
+    @extend .measure
+
+    label
+      @extend .f6
+      @extend .b
+      @extend .db
+      @extend .mb2
+    input
+      @extend .ba
+      @extend .b--black-20
+      @extend .pa2
+      @extend .mb2
+      @extend .db
+      @extend .w-100
+    small
+      @extend .f6
+      @extend .black-60
+      @extend .db
+      @extend .mb2

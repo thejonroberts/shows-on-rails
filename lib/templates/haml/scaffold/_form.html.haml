@@ -8,7 +8,9 @@
 <% for attribute in attributes -%>
   .field
     = f.label :<%= attribute.name %>
-    = f.<%= attribute.field_type %> :<%= attribute.name %>
+    = f.<%= attribute.field_type %>(:<%= attribute.name %>, required: true)
+    -# %small{id: <%= attribute.name.concat('-desc') %>}
+      -# Helper text for the form control.
 <% end -%>
   .actions
-    = f.submit 'Save'
+    = f.button

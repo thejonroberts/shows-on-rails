@@ -1,0 +1,7 @@
+%a{href: url}
+  %button.inline-flex.items-center{class: color}
+    -# .no-underline.black.bg-animate.hover-bg-black.hover-white.inline-flex.items-center.pa3.ba.border-box.mr4
+    %svg.w1{"data-icon" => "chevronLeft", :style => "fill:currentcolor", :viewbox => "0 0 32 32"}
+      %title chevronLeft icon
+      %path{:d => "M20 1 L24 5 L14 16 L24 27 L20 31 L6 16 z"}
+    %span.pl1= @text || 'Back'
