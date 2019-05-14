@@ -12,5 +12,10 @@
     -# %small{id: <%= attribute.name.concat('-desc') %>}
       -# Helper text for the form control.
 <% end -%>
-  .actions
+  .actions.measure.flex.items-center.justify-between
+    TODO: if persisted, back to show, else back to index
+    - if @<%= singular_table_name %>.persisted?
+      = render('shared/back_button', <%= index_helper %>_path: venues_path, color: 'bg-danger')
+    - else
+      = render('shared/back_button', <%= index_helper %>_path: venues_path, color: 'bg-danger')
     = f.button

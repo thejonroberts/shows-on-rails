@@ -3,6 +3,7 @@ specs
 admin role - boolean on user.
 
 footer
+404 page
 
 i18n basics
   - submit button
@@ -33,6 +34,7 @@ PIctures - most models
 
 eslint
 nvmrc
+dotenv
 
 account info - devise - user account route???
   - fix nav sign_out link
