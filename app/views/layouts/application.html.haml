@@ -11,12 +11,12 @@
     = stylesheet_pack_tag 'stylesheets', 'data-turbolinks-track': 'reload', async: true
   %body
     = render('/shared/navbar')
-    #message
-      .notice
+    #message.ph3.ph4-ns
+      .notice.bg-secondary.off-white
         -if notice.present?
-          %p.notice= notice
-      .alert
+          %p.notice.pa2= notice
+      .alert.bg-warning.white
         -if alert.present?
-          %p.alert= alert
+          %p.alert.pa2= alert
     .page-content.ph3.ph4-ns
       = yield

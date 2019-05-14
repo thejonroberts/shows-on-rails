@@ -1,6 +1,9 @@
+logout is broken.
 fix rubocop auto-config todo formatting issues (from rails new)
 specs
 admin role - boolean on user.
+
+error explanations (don't fill in password on user changes)
 
 footer
 404 page
