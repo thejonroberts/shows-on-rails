@@ -11,14 +11,16 @@
     -# %small#name-desc
     -#   Helper text for the form control.
   .field
+    -# TODO: regex, prefill with http://, or add it programatically?
     = f.label(:site_url, 'Website')
-    = f.text_field :site_url
+    -# = f.url_field(:site_url)
+    = f.text_field(:site_url)
   .field
     = f.label :phone
     = f.text_field :phone
   .field
     = f.label :email
-    = f.text_field :email
+    = f.email_field :email
   %h4 Address
   = f.fields_for :address do |a|
     .field

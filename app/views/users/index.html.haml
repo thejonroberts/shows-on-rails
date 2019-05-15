@@ -1,23 +1,27 @@
 %h2 Users
-
-%table
-  %tr
-    %th User
-    %th Name
-    %th Email
-    %th Phone
-    %th Location
-    %th
-
-  - @users.each do |user|
-    %tr
-      %td= user.display_name
-      %td= "#{user.first_name} #{user.last_name}"
-      %td= user.email
-      %td= user.phone
-      %td= user.address.present? ? "#{user.address.city}, #{user.address.state} #{user.address.country}" : 'N/A'
-      %td= link_to 'View', user
+.overflow-auto
+  %table{cellspacing: 0}
+    %thead
+      %tr
+        %th User
+        %th Name
+        %th Email
+        %th Phone
+        %th Location
+        %th
+    %tbody
+      - @users.each do |user|
+        %tr
+          %td= user.display_name
+          %td= "#{user.first_name} #{user.last_name}"
+          %td= user.email
+          %td= user.phone
+          %td= user.address.present? ? "#{user.address.city}, #{user.address.state} #{user.address.country}" : 'N/A'
+          %td
+            %button
+              = link_to 'View', user
 
 %br
 
-%span= link_to('New User', 'users/sign_up', {})
+%button
+  = link_to('New User', 'users/sign_up', {})

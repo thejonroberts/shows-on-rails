@@ -2,6 +2,7 @@
 
 = render 'form'
 
-= link_to 'Show', @<%= singular_table_name %>
-\|
-= link_to 'Back', <%= index_helper %>_path
+%button
+  = link_to 'Show', @<%= singular_table_name %>
+%button
+  = link_to 'Back', <%= index_helper %>_path

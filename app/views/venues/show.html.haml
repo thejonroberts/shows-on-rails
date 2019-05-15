@@ -1,4 +1,3 @@
-%p#notice= notice
 
 %p
   %b Name:
@@ -14,10 +13,10 @@
   = @venue.email
 %p
   %b Location:
-- if @venue.address.present?
-  = "#{@venue.address.city}, #{@venue.address.state} #{@venue.address.country}"
-- else
-  %b Unknown
+  - if @venue.address.present?
+    = "#{@venue.address.city}, #{@venue.address.state} #{@venue.address.country}"
+  - else
+    %b Unknown
 
 %br
 

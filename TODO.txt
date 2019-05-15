@@ -1,15 +1,10 @@
-logout is broken.
-fix rubocop auto-config todo formatting issues (from rails new)
-specs
-admin role - boolean on user.
-
-error explanations (don't fill in password on user changes)
-
+MOBILE compatibility
 footer
+error explanations (don't fill in password on user changes)
 404 page
+form validations - devise handles this, follow the pattern.
 
-i18n basics
-  - submit button
+Venue + User contact options - by_phone by_email
 
 Phone number standardization
   current address country_code works?  put on user / add user method.
@@ -18,14 +13,6 @@ Phone number standardization
 Address input standardization:
   country code selection dropdown.
   verification on upload?
-
-Soft deletion of records
-  https://github.com/jhawthorn/discard (vs. paranoia gem)
-  - most of them?
-
-Venue + User contact options - by_phone by_email
-
-Null: false to migrations???
 
 Created by user id for user generated content:
 + managed_by_user_id
@@ -40,11 +27,50 @@ nvmrc
 dotenv
 
 account info - devise - user account route???
-  - fix nav sign_out link
+
+admin role - boolean on user.
 
 remove comments / uglify js + css in inwebpacker (sourcemaps?)
+
+fix rubocop auto-config todo formatting issues (from rails new)
+specs
+
+pagination
+https://github.com/kaminari/kaminari
+
+friendly_ids / urls
+https://github.com/norman/friendly_id
+
+email styling
+testing emails: https://github.com/ryanb/letter_opener
+https://github.com/plataformatec/devise#activejob-integration
+
+https://github.com/plataformatec/devise/wiki/How-To:-Add-an-Admin-role
+https://github.com/plataformatec/devise/wiki/How-To:-Add-a-default-role-to-a-User
+https://github.com/plataformatec/devise/wiki/How-To:-Add-sign_in,-sign_out,-and-sign_up-links-to-your-layout-template
+https://github.com/plataformatec/devise/wiki/How-to:-Soft-delete-a-user-when-user-deletes-account
+
+i18n basics
+  - submit button
+
+
+
+Soft deletion of records
+  https://github.com/jhawthorn/discard (vs. paranoia gem)
+  - most of them?
+
+Null: false to migrations???
 
 once deployed:
 https://developers.google.com/speed/pagespeed/insights/
 
+footer pages
+terms of use
+language
+license
+contribute
+
 logo + favicon
+
+SEO / meta tags
+https://github.com/kpumuk/meta-tags

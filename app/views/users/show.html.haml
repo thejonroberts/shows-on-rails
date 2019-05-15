@@ -12,16 +12,17 @@
   = @user.email
 %p
   %b Location:
-- if @user.address.present?
-  = "#{@user.address.city}, #{@user.address.state} #{@user.address.country}"
-- else
-  %b Unknown
+  - if @user.address.present?
+    = "#{@user.address.city}, #{@user.address.state} #{@user.address.country}"
+  - else
+    %b Unknown
 
 %br
 
 -# TODO: admin role / superuser can edit any
-- if @user.id = current_user
-  = link_to('Edit', edit_user_path, {})
+- if @user.id = current_user || current_user&.superuser?
+  %button
+    = link_to('Edit', edit_user_path, {})
 
-\|
-= link_to 'Back', users_path
+%button
+  = link_to 'Back', users_path
