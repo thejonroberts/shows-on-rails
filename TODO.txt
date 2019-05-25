@@ -4,7 +4,6 @@ error explanations (don't fill in password on user changes)
 404 page
 form validations - devise handles this, follow the pattern.
 
-Venue + User contact options - by_phone by_email
 
 Phone number standardization
   current address country_code works?  put on user / add user method.
@@ -20,6 +19,8 @@ Created by user id for user generated content:
   - will require soft_deletion of users?
     - or transfer to admin / default user?  unmanaged scope?
 
+Venue + User contact options - by_phone by_email
+superuser
 PIctures - most models
 
 eslint

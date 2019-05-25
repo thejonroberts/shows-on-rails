@@ -20,7 +20,7 @@
 %br
 
 -# TODO: admin role / superuser can edit any
-- if @user.id = current_user || current_user&.superuser?
+- if @user.id = current_user&.id || current_user&.superuser?
   %button
     = link_to('Edit', edit_user_path, {})
 
