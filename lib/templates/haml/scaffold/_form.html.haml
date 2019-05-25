@@ -13,9 +13,9 @@
       -# Helper text for the form control.
 <% end -%>
   .actions.measure.flex.items-center.justify-between
-    TODO: if persisted, back to show, else back to index
     - if @<%= singular_table_name %>.persisted?
-      = render('shared/back_button', <%= index_helper %>_path: venues_path, color: 'bg-danger')
+      = render('shared/back_button', <%= index_helper %>_path: <%= singular_table_name %>_path, color: 'bg-danger')
+      = render('shared/back_button', <%= show_helper %>_path: <%= singular_table_name %>_path, color: 'bg-danger')
     - else
-      = render('shared/back_button', <%= index_helper %>_path: venues_path, color: 'bg-danger')
+      = render('shared/back_button', <%= index_helper %>_path: <%= singular_table_name %>_path, color: 'bg-danger')
     = f.button
