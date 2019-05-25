@@ -75,3 +75,6 @@ logo + favicon
 
 SEO / meta tags
 https://github.com/kpumuk/meta-tags
+
+http2
+https://dassur.ma/things/h2setup/
