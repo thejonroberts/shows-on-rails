@@ -1,11 +1,14 @@
 FactoryBot.define do
   factory :user do
-    email { Faker::Internet.email }
-    password { 'password' }
-    password_confirmation { 'password' }
+    first_name { Faker::Name.first_name }
+    last_name { Faker::Name.last_name }
+    display_name { Faker::Internet.username }
+    phone { Faker::PhoneNumber.cell_phone }
+    email { Faker::Internet.safe_email }
+    password { Faker::Internet.password }
+    password_confirmation { password }
     confirmed_at { Date.today }
-
-    # email {   }
+    # NOTE: other devise fields
     # encrypted_password {   }
     # reset_password_token {   }
     # reset_password_sent_at {   }
@@ -22,7 +25,15 @@ FactoryBot.define do
     # failed_attempts {   }
     # unlock_token {   }
     # locked_at {   }
-    # created_at {   }
-    # updated_at {   }
+
+    factory :user_with_address do
+      transient do
+        address_count { 1 }
+      end
+
+      after(:create) do |user, evaluator|
+        create_list(:address, evaluator.address_count, addressable: user)
+      end
+    end
   end
 end

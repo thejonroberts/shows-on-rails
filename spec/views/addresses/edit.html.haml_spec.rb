@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'addresses/edit', type: :view do
   # before(:each) do
   let(:user) { create(:user) }
-  let(:address) { create(:address, addressable: user) }
+  let(:address) { create(:address) }
   # @address = assign(:address, Address.create!(
   #   # addressable: nil,
   #   line_one: 'MyString',
@@ -20,7 +20,7 @@ RSpec.describe 'addresses/edit', type: :view do
     # byebug
     render address
 
-    assert_select 'form[action=?][method=?]', address_path(address), 'post' do
+    assert_select('form[action=?][method=?]', address_path(address), 'post') do
       assert_select 'input[name=?]', 'address[addressable_id]'
 
       assert_select 'input[name=?]', 'address[line_one]'

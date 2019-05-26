@@ -5,11 +5,23 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :confirmable, :lockable,
          :recoverable, :rememberable, :validatable, :trackable, :timeoutable
 
-  has_one :address, as: :addressable, dependent: :destroy
-  accepts_nested_attributes_for :address
+  has_many :addresses, as: :addressable, dependent: :destroy
+  accepts_nested_attributes_for :addresses
 
   def superuser?
     # TODO: implement a superuser
     false
+  end
+
+  def address
+    addresses.first
+  end
+
+  def name
+    "#{first_name} #{last_name}"
+  end
+
+  def human_location
+    "#{address.city} #{address.state}, #{address.country}" if address.present?
   end
 end
