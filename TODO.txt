@@ -1,8 +1,19 @@
-error explanations (don't fill in password on user changes)
+users/new goes to registration vs. form....
+
+error explanations (don't fill in password on user changes?)
+ - devise error styles
+
 404 page
-form validations - devise handles this, follow the pattern.
 
 user preferred address id
+
+remove address views - only through user / venue
+- replaced with map of venues + bands.
+
+pagination
+table headers sticky
+
+footer always at bottom
 
 allow non-http:// web urls
 
@@ -75,6 +86,7 @@ contribute
 logo + favicon
 
 SEO / meta tags
+https://nithinbekal.com/posts/rails-page-titles/
 https://github.com/kpumuk/meta-tags
 
 http2

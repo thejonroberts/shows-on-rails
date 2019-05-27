@@ -1,28 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe 'addresses/edit', type: :view do
-  # before(:each) do
-  let(:user) { create(:user) }
-  let(:address) { create(:address) }
-  # @address = assign(:address, Address.create!(
-  #   # addressable: nil,
-  #   line_one: 'MyString',
-  #   line_two: 'MyString',
-  #   city: 'MyString',
-  #   state: 'MyString',
-  #   country: 'MyString',
-  #   country_code: 'MyString',
-  #   zip_code: 'MyString'
-  # ))
-  # end
+  let(:user) { create(:user_with_address) }
+  let(:address) { user.addresses.first }
+  before(:each) do
+    @address = assign(:address, address)
+  end
 
-  xit 'renders the edit address form' do
-    # byebug
-    render address
+  it 'renders the edit address form' do
+    render
 
     assert_select('form[action=?][method=?]', address_path(address), 'post') do
-      assert_select 'input[name=?]', 'address[addressable_id]'
-
       assert_select 'input[name=?]', 'address[line_one]'
 
       assert_select 'input[name=?]', 'address[line_two]'

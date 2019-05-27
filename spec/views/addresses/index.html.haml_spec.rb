@@ -1,40 +1,20 @@
 require 'rails_helper'
 
 RSpec.describe 'addresses/index', type: :view do
+  let(:user) { create(:user_with_address, address_count: 5) }
+  let(:addresses) { user.addresses }
   before(:each) do
-    assign(:addresses, [
-             Address.create!(
-               #  addressable: nil,
-               line_one: 'Line One',
-               line_two: 'Line Two',
-               city: 'City',
-               state: 'State',
-               country: 'Country',
-               country_code: 'Country Code',
-               zip_code: 'Zip Code'
-             ),
-             Address.create!(
-               #  addressable: nil,
-               line_one: 'Line One',
-               line_two: 'Line Two',
-               city: 'City',
-               state: 'State',
-               country: 'Country',
-               country_code: 'Country Code',
-               zip_code: 'Zip Code'
-             )
-           ])
+    @addresses = assign(:addresses, addresses)
   end
 
   xit 'renders a list of addresses' do
     render
-    # assert_select 'tr>td', text: nil.to_s, count: 2
-    assert_select 'tr>td', text: 'Line One'.to_s, count: 2
-    assert_select 'tr>td', text: 'Line Two'.to_s, count: 2
-    assert_select 'tr>td', text: 'City'.to_s, count: 2
-    assert_select 'tr>td', text: 'State'.to_s, count: 2
-    assert_select 'tr>td', text: 'Country'.to_s, count: 2
-    assert_select 'tr>td', text: 'Country Code'.to_s, count: 2
-    assert_select 'tr>td', text: 'Zip Code'.to_s, count: 2
+    addresses.each do |address|
+      assert_select 'tr>td', text: address.line_one.to_s, count: 1
+      assert_select 'tr>td', text: address.line_two.to_s
+      assert_select 'tr>td', text: address.city.to_s
+      assert_select 'tr>td', text: address.state.to_s
+      assert_select 'tr>td', text: address.country.to_s
+    end
   end
 end

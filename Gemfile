@@ -50,6 +50,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem 'rubocop', require: false
+  gem 'faker'
 end
 
 group :development do
@@ -74,5 +75,4 @@ group :test do
   gem 'chromedriver-helper'
 
   gem 'database_cleaner'
-  gem 'faker'
 end

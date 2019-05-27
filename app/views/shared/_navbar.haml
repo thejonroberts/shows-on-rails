@@ -1,12 +1,12 @@
-%nav.pa3.pa4-ns{ role: :navigation }
+%nav{ role: :navigation }
   -#   -#   %img{ src: 'https://picsum.photos/40/40'}
-  %a.highlight.link.dim.b.f6.f5-ns.dib.mr3{href: root_url, title: 'Home'} Shows Yr Way
-  %a.link.dim.f6.f5-ns.dib.mr3{href: users_path, title: 'Users'} Users
-  %a.link.dim.f6.f5-ns.dib.mr3{href: venues_path, title: 'Venues'} Venues
-  %a.link.dim.f6.f5-ns.dib.mr3{href: addresses_path, title: 'Addresses'} Addresses
+  %a.highlight.b{href: root_url, title: 'Home'} Shows Yr Own Way
+  %a{href: users_path, title: 'Users'} Users
+  %a{href: venues_path, title: 'Venues'} Venues
+  %a{href: addresses_path, title: 'Addresses'} Addresses
   - if current_user.present?
-    %a.link.dim.f6.f5-ns.dib.mr3{href: '/users/edit', title: 'Profile'} Profile
+    %a{href: '/users/edit', title: 'Profile'} Profile
     = link_to('Logout', '/users/sign_out', method: :delete, title: 'Logout')
   - else
-    %a.link.dim.f6.f5-ns.dib.mr3{href: '/users/sign_up', title: 'Register'} Register
-    %a.link.dim.f6.f5-ns.dib{href: '/users/sign_in', title: 'Sign In'} Sign In
+    %a{href: '/users/sign_up', title: 'Register'} Register
+    %a{href: '/users/sign_in', title: 'Sign In'} Sign In

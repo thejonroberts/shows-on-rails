@@ -70,12 +70,7 @@ RSpec.configure do |config|
   config.include Devise::Test::IntegrationHelpers, type: :request
 
   # Capybara: use chrome for js: true
-  # TODO: use headless
-  Capybara.register_driver :selenium_chrome do |app|
-    Capybara::Selenium::Driver.new(app, browser: :chrome)
-  end
-
-  Capybara.javascript_driver = :selenium_chrome
+  Capybara.javascript_driver = :selenium_chrome_headless
 
   config.before(:suite) do
     # NOTE: truncation needs to exclude postgis tables, if necessary at all
