@@ -1,19 +1,12 @@
 %nav{ role: :navigation }
-  %ul
-    %li
-      %img{ src: 'https://picsum.photos/40/40'}
-    %li
-      = link_to('Users', '/users', {})
-    %li
-      = link_to('Addresses', '/addresses', {})
-    %li
-      = link_to('Venues', '/venues', {})
-  %ul
-    %li
-      = link_to('Account', '/users/edit', {})
-    %li
-      = link_to('Sign Out', '/users/sign_out', {})
-    %li
-      = link_to('Sign In', '/users/sign_in', {})
-    %li
-      = link_to('Sign Up', '/users/sign_up', {})
+  -#   -#   %img{ src: 'https://picsum.photos/40/40'}
+  %a.highlight.b{href: root_url, title: 'Home'} Shows Yr Own Way
+  %a{href: users_path, title: 'Users'} Users
+  %a{href: venues_path, title: 'Venues'} Venues
+  %a{href: addresses_path, title: 'Addresses'} Addresses
+  - if current_user.present?
+    %a{href: '/users/edit', title: 'Profile'} Profile
+    = link_to('Logout', '/users/sign_out', method: :delete, title: 'Logout')
+  - else
+    %a{href: '/users/sign_up', title: 'Register'} Register
+    %a{href: '/users/sign_in', title: 'Sign In'} Sign In

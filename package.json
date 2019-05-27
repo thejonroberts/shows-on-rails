@@ -1,6 +1,23 @@
 {
   "name": "shows",
+  "description": "",
   "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thejonroberts/shows-on-rails.git"
+  },
+  "keywords": [
+    "rails",
+    "webpacker",
+    "tachyons"
+  ],
+  "author": "Jon Roberts",
+  "license": "MIT",
+  "homepage": "https://github.com/thejonroberts/shows-on-rails",
   "dependencies": {
     "@rails/actioncable": "^6.0.0-alpha",
     "@rails/activestorage": "^6.0.0-alpha",
@@ -9,6 +26,8 @@
     "turbolinks": "^5.2.0"
   },
   "devDependencies": {
+    "tachyons": "^4.11.1",
+    "tachyons-sass": "^4.9.5",
     "webpack-dev-server": "^3.3.1"
   }
 }

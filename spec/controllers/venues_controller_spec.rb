@@ -28,17 +28,25 @@ RSpec.describe VenuesController, type: :controller do
   # Venue. As you add validations to Venue, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) do
-    skip('Add a hash of attributes valid for your model')
+    attributes_for(:venue)
   end
 
+  # TODO: invalid params should reload the form with prefilled data.
   let(:invalid_attributes) do
-    skip('Add a hash of attributes invalid for your model')
+    valid_attributes[:email] = ''
+    valid_attributes
   end
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # VenuesController. Be sure to keep this updated too.
   let(:valid_session) { {} }
+
+  let(:user) { build_stubbed(:user) }
+
+  before do
+    sign_in(user)
+  end
 
   describe 'GET #index' do
     it 'returns a success response' do
@@ -86,24 +94,26 @@ RSpec.describe VenuesController, type: :controller do
     end
 
     context 'with invalid params' do
-      it "returns a success response (i.e. to display the 'new' template)" do
+      it 're-renders the new template' do
         post :create, params: { venue: invalid_attributes }, session: valid_session
-        expect(response).to be_successful
+        expect(response).to render_template(:new)
+      end
+
+      it 'displays the invalid attributes in the rendered template' do
+        post :create, params: { venue: invalid_attributes }, session: valid_session
+        expect(assigns(:venue)).to have_attributes(invalid_attributes)
       end
     end
   end
 
   describe 'PUT #update' do
     context 'with valid params' do
-      let(:new_attributes) do
-        skip('Add a hash of attributes valid for your model')
-      end
+      let(:new_attributes) { attributes_for(:venue) }
 
       it 'updates the requested venue' do
         venue = Venue.create! valid_attributes
         put :update, params: { id: venue.to_param, venue: new_attributes }, session: valid_session
-        venue.reload
-        skip('Add assertions for updated state')
+        expect(venue.reload).to have_attributes(new_attributes)
       end
 
       it 'redirects to the venue' do
@@ -114,10 +124,16 @@ RSpec.describe VenuesController, type: :controller do
     end
 
     context 'with invalid params' do
-      it "returns a success response (i.e. to display the 'edit' template)" do
-        venue = Venue.create! valid_attributes
+      let(:venue) { create(:venue, valid_attributes) }
+
+      it 're-renders the edit template' do
         put :update, params: { id: venue.to_param, venue: invalid_attributes }, session: valid_session
-        expect(response).to be_successful
+        expect(response).to render_template(:edit)
+      end
+
+      it 'displays the original attributes in the rendered template' do
+        put :create, params: { venue: invalid_attributes }, session: valid_session
+        expect(assigns(:venue)).to have_attributes(valid_attributes)
       end
     end
   end

@@ -115,8 +115,7 @@ CREATE TABLE public.users (
     first_name character varying,
     last_name character varying,
     display_name character varying,
-    phone character varying,
-    address_id bigint
+    phone character varying
 );
 
 
@@ -149,7 +148,6 @@ CREATE TABLE public.venues (
     site_url character varying,
     phone character varying,
     email character varying,
-    address_id bigint,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL
 );
@@ -243,13 +241,6 @@ CREATE INDEX index_addresses_on_addressable_type_and_addressable_id ON public.ad
 
 
 --
--- Name: index_users_on_address_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_users_on_address_id ON public.users USING btree (address_id);
-
-
---
 -- Name: index_users_on_confirmation_token; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -278,29 +269,6 @@ CREATE UNIQUE INDEX index_users_on_unlock_token ON public.users USING btree (unl
 
 
 --
--- Name: index_venues_on_address_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_venues_on_address_id ON public.venues USING btree (address_id);
-
-
---
--- Name: venues fk_rails_07c8eb3ba9; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.venues
-    ADD CONSTRAINT fk_rails_07c8eb3ba9 FOREIGN KEY (address_id) REFERENCES public.addresses(id);
-
-
---
--- Name: users fk_rails_eb2fc738e4; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.users
-    ADD CONSTRAINT fk_rails_eb2fc738e4 FOREIGN KEY (address_id) REFERENCES public.addresses(id);
-
-
---
 -- PostgreSQL database dump complete
 --
 
@@ -311,7 +279,6 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20190426012544'),
 ('20190427174041'),
 ('20190429052641'),
-('20190502075201'),
 ('20190504033730');
 
 

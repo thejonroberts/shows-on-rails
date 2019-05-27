@@ -1,17 +1,29 @@
-fix rubocop auto-config todo formatting issues (from rails new)
+users/new goes to registration vs. form....
 
+error explanations (don't fill in password on user changes?)
+ - devise error styles
+
+404 page
+
+user preferred address id
+
+remove address views - only through user / venue
+- replaced with map of venues + bands.
+
+pagination
+table headers sticky
+
+footer always at bottom
+
+allow non-http:// web urls
 
 Phone number standardization
   current address country_code works?  put on user / add user method.
   https://github.com/joost/phony_rails
 
-Soft deletion of records
-  https://github.com/jhawthorn/discard (vs. paranoia gem)
-  - most of them?
-
-Venue + User contact options - by_phone by_email
-
-Null: false to migrations???
+Address input standardization:
+  country code selection dropdown.
+  verification on upload?
 
 Created by user id for user generated content:
 + managed_by_user_id
@@ -19,7 +31,63 @@ Created by user id for user generated content:
   - will require soft_deletion of users?
     - or transfer to admin / default user?  unmanaged scope?
 
+Venue + User contact options - by_phone by_email
+superuser
 PIctures - most models
 
 eslint
 nvmrc
+dotenv
+
+account info - devise - user account route???
+
+admin role - boolean on user.
+
+remove comments / uglify js + css in inwebpacker (sourcemaps?)
+
+fix rubocop auto-config todo formatting issues (from rails new)
+specs
+
+pagination
+https://github.com/kaminari/kaminari
+
+friendly_ids / urls
+https://github.com/norman/friendly_id
+
+email styling
+testing emails: https://github.com/ryanb/letter_opener
+https://github.com/plataformatec/devise#activejob-integration
+
+https://github.com/plataformatec/devise/wiki/How-To:-Add-an-Admin-role
+https://github.com/plataformatec/devise/wiki/How-To:-Add-a-default-role-to-a-User
+https://github.com/plataformatec/devise/wiki/How-To:-Add-sign_in,-sign_out,-and-sign_up-links-to-your-layout-template
+https://github.com/plataformatec/devise/wiki/How-to:-Soft-delete-a-user-when-user-deletes-account
+
+i18n basics
+  - submit button
+
+
+
+Soft deletion of records
+  https://github.com/jhawthorn/discard (vs. paranoia gem)
+  - most of them?
+
+Null: false to migrations???
+
+once deployed:
+https://developers.google.com/speed/pagespeed/insights/
+
+footer pages
+terms of use
+language
+license
+contribute
+
+logo + favicon
+
+SEO / meta tags
+https://nithinbekal.com/posts/rails-page-titles/
+https://github.com/kpumuk/meta-tags
+
+http2
+https://dassur.ma/things/h2setup/

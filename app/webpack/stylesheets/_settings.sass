@@ -1,0 +1,114 @@
+// Debug module for tachyons: comment out for prod - TODO: do this on .env
+// @import 'debug'
+// Extend tachyons styles to apply defaults for html elements
+@import 'node_modules/tachyons-sass/tachyons'
+
+// BODY
+body
+  @extend .sans-serif
+
+//LISTS
+ul
+  @extend .list
+  @extend .pl0
+
+// IMAGES
+img
+  @extend .mw-100
+
+  // LINKS
+a
+  @extend .link
+  @extend .dim
+
+button > a,
+span > a
+  color: inherit
+  font-size: inherit
+
+  // BUTTONS
+button
+  @extend .f6
+  @extend .link
+  @extend .br3
+  @extend .ba
+  @extend .ph3
+  @extend .pv2
+  @extend .mb2
+  @extend .dib
+  margin: 0
+  // defualt colors (from _colors)
+  @extend .bg-secondary
+  @extend .off-white
+
+  a
+
+// TABLES
+table
+  @extend .f6
+  @extend .w-100
+  @extend .center
+
+  tbody
+    @extend .lh-copy
+
+  tr
+    @extend .stripe-dark
+
+    th
+      @extend .fw6
+      @extend .tl
+      @extend .pa2
+      @extend .bg-white
+
+    td
+      @extend .pa2
+
+// FORMS
+// NOTE: .input-reset breaks at least checkboxes, listing all current input
+//   types for easy reference as the are added to see what else works/doesn't
+input[type="button"],
+// input[type="checkbox"],
+// input[type="color"],
+// input[type="date"],
+// input[type="datetime-local"],
+input[type="email"],
+// input[type="file"],
+// input[type="hidden"],
+// input[type="image"],
+// input[type="month"],
+input[type="number"],
+input[type="password"],
+// input[type="radio"],
+// input[type="range"],
+input[type="reset"],
+input[type="search"],
+input[type="submit"],
+input[type="tel"],
+input[type="text"],
+// input[type="time"],
+input[type="url"]
+// input[type="week"]
+  @extend .input-reset
+
+form
+  .field
+    @extend .measure
+
+    label
+      @extend .f6
+      @extend .b
+      @extend .db
+      @extend .mb2
+    input
+      @extend .ba
+      @extend .b--black-20
+      @extend .pa2
+      @extend .mb2
+      @extend .db
+      @extend .w-100
+    small
+      @extend .f6
+      @extend .black-60
+      @extend .db
+      @extend .mb2
