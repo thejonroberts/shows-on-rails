@@ -1,9 +1,10 @@
-MOBILE compatibility
-footer
 error explanations (don't fill in password on user changes)
 404 page
 form validations - devise handles this, follow the pattern.
 
+user preferred address id
+
+allow non-http:// web urls
 
 Phone number standardization
   current address country_code works?  put on user / add user method.

@@ -13,6 +13,7 @@ class User < ApplicationRecord
     false
   end
 
+  # TODO: add default address_id to user table.
   def address
     addresses.first
   end
