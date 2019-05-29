@@ -12,8 +12,6 @@ RSpec.describe 'users/index.html.haml', type: :view do
     users.each do |user|
       assert_select 'tr>td', text: user.display_name.to_s
       assert_select 'tr>td', text: user.name.to_s
-      assert_select 'tr>td', text: user.phone.to_s
-      assert_select 'tr>td', text: user.email.to_s
     end
   end
 end

@@ -1,12 +1,11 @@
-scaffold changes for views (venues)
-meta title and descriptions
-
 users/new goes to registration vs. form....
 
 error explanations (don't fill in password on user changes?)
  - devise error styles
 
 404 page
+
+dashboard
 
 user preferred address id
 

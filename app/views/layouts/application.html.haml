@@ -1,12 +1,12 @@
 !!!
 %html{ lang: 'en'}
   %head
-    - if content_for(:title).present?
+    - if content_for?(:title)
       %title= "#{content_for(:title)} | #{brand_title}"
     - else
       %title= brand_title
 
-    - if content_for(:meta_description).present?
+    - if content_for?(:meta_description)
       %meta{ name: 'Description', content: "#{content_for(:meta_description)}" }
 
     %meta{ name: "theme-color", content: "#5e2ca5" }

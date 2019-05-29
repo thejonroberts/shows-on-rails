@@ -22,7 +22,5 @@ RSpec.describe 'venues/index', type: :view do
     render
     assert_select 'tr>td', text: 'Name'.to_s, count: 2
     assert_select 'tr>td', text: 'Site Url'.to_s, count: 2
-    assert_select 'tr>td', text: 'Phone'.to_s, count: 2
-    assert_select 'tr>td', text: 'Email'.to_s, count: 2
   end
 end
