@@ -64,6 +64,17 @@ table
     td
       @extend .pa2
 
+@media screen and (max-width: 30em)
+  table
+    display: flex
+    flex-direction: column
+    thead
+      display: none
+    tbody
+      tr
+        display: flex
+        flex-direction: column
+
 // FORMS
 // NOTE: .input-reset breaks at least checkboxes, listing all current input
 //   types for easy reference as the are added to see what else works/doesn't

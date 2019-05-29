@@ -1,3 +1,6 @@
+- content_for(:title) { "#{@user.display_name}: Edit Profile" }
+- content_for(:meta_description) { "Edit information for #{@user.name}" }
+
 = render 'form'
 
 %button

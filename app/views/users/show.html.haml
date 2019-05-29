@@ -1,3 +1,6 @@
+- content_for(:title) { "#{@user.display_name}: Profile" }
+- content_for(:meta_description) { "Information for #{@user.name}" }
+
 %p
   %b User:
   = @user.display_name

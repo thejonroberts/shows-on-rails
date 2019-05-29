@@ -1,3 +1,6 @@
+- content_for(:title) { "<%= plural_table_name.titleize %>" }
+- content_for(:meta_description) { "A list of all <%= plural_table_name %> looking for shows." }
+
 %h2 <%= plural_table_name.titleize %>
 .overflow-auto
   %table{ cellspacing: '0' }
