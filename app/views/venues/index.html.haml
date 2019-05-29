@@ -1,13 +1,16 @@
+- content_for(:title) { 'Venues' }
+- content_for(:meta_description) { 'A list of all venues looking for shows.' }
+
 %h2 Venues
 .overflow-auto
   %table{cellspacing: 0}
     %thead
       %tr
         %th Name
-        %th Site url
-        %th Phone
-        %th Email
         %th Location
+        %th Site url
+        -# %th Phone
+        -# %th Email
         %th
         - if current_user&.superuser?
           %th
@@ -16,11 +19,21 @@
     %tbody
       - @venues.each do |venue|
         %tr
-          %td= venue.name
-          %td= venue.site_url
-          %td= venue.phone
-          %td= venue.email
-          %td= venue.address.present? ? "#{venue.address.city}, #{venue.address.state} #{venue.address.country}" : 'N/A'
+          %td
+            -# %b.dn-ns Name:
+            %b= venue.name
+          %td
+            -# %b.dn-ns Location:
+            = venue.address.present? ? "#{venue.address.city}, #{venue.address.state} #{venue.address.country}" : 'N/A'
+          %td
+            -# %b.dn-ns Site:
+            = venue.site_url
+          -# %td
+          -#   -# %b.dn-ns Phone:
+          -#   = venue.phone
+          -# %td
+          -#   -# %b.dn-ns Email:
+          -#   = venue.email
           %td
             %button
               = link_to 'View', venue

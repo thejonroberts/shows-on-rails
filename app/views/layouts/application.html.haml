@@ -1,11 +1,22 @@
 !!!
 %html{ lang: 'en'}
   %head
+    - if content_for(:title).present?
+      %title= "#{content_for(:title)} | #{brand_title}"
+    - else
+      %title= brand_title
+
+    - if content_for(:meta_description).present?
+      %meta{ name: 'Description', content: "#{content_for(:meta_description)}" }
+
+    %meta{ name: "theme-color", content: "#5e2ca5" }
+
     %meta{ content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type" }
     %meta{ name: "viewport", content: "width=device-width" }
-    %title Shows
+
     = csrf_meta_tags
     = csp_meta_tag
+
     -# = javascript_pack_tag 'vendor', 'data-turbolinks-track': 'reload', async: true
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', async: true
     -# = stylesheet_pack_tag 'vendor', 'data-turbolinks-track': 'reload', async: true

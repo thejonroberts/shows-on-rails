@@ -1,3 +1,6 @@
+- content_for(:title) { "#{@venue.name}: Edit Profile" }
+- content_for(:meta_description) { "Edit information for #{@venue.name}" }
+
 %h1 Editing venue
 
 = render 'form'
