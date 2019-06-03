@@ -2,7 +2,7 @@
 %html{ lang: 'en'}
   %head
     - if content_for?(:title)
-      %title= "#{content_for(:title)} | #{brand_title}"
+      %title= page_title(content_for(:title))
     - else
       %title= brand_title
 
