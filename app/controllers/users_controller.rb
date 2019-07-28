@@ -5,12 +5,15 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.all.includes(:addresses)
+    fresh_when(@users)
   end
 
   # GET /users/1
   # GET /users/1.json
-  def show; end
+  def show
+    fresh_when(@user)
+  end
 
   # GET /users/new
   # NOTE: Devise handles this at /users/regigstration

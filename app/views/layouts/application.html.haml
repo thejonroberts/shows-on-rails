@@ -1,12 +1,14 @@
 !!!
 %html{ lang: 'en'}
   %head
-    - if content_for(:title).present?
-      %title= "#{content_for(:title)} | #{brand_title}"
+    = favicon_link_tag
+    = action_cable_meta_tag
+    - if content_for?(:title)
+      %title= page_title(content_for(:title))
     - else
       %title= brand_title
 
-    - if content_for(:meta_description).present?
+    - if content_for?(:meta_description)
       %meta{ name: 'Description', content: "#{content_for(:meta_description)}" }
 
     %meta{ name: "theme-color", content: "#5e2ca5" }
@@ -24,7 +26,9 @@
   %body
     %header
       = render('/shared/navbar')
-      #message.ph3.ph4-ns
+      .ph3.ph4-ns
+        .message.bg-secondary.off-white
+          #message.notice.pa2
         .notice.bg-secondary.off-white
           -if notice.present?
             %p.notice.pa2= notice

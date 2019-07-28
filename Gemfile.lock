@@ -188,6 +188,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
+    redis (4.1.2)
     regexp_parser (1.4.0)
     responders (2.4.1)
       actionpack (>= 4.2.0, < 6.0)
@@ -310,6 +311,7 @@ DEPENDENCIES
   rails (~> 5.2.2)
   rails-controller-testing
   rails-erd
+  redis (~> 4.0)
   rspec-rails
   rubocop
   sass-rails (~> 5.0)

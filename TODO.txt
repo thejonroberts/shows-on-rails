@@ -1,17 +1,28 @@
-scaffold changes for views (venues)
-meta title and descriptions
-
 users/new goes to registration vs. form....
+
+webpacker javascript_packs_with_chunks_tag
+https://github.com/rails/webpacker/blob/master/docs/webpack-dev-server.md
+https://github.com/rails/webpacker/blob/master/docs/webpack.md
+
+https://developers.google.com/web/fundamentals/performance/why-performance-matters/
 
 error explanations (don't fill in password on user changes?)
  - devise error styles
 
-404 page
+404 / error pages
+
+dashboard
 
 user preferred address id
 
+readme
+
+debugging https://github.com/rails/webpacker/blob/master/docs/troubleshooting.md
+
 remove address views - only through user / venue
 - replaced with map of venues + bands.
+
+dependabot
 
 pagination
 table headers sticky
@@ -77,6 +88,9 @@ Soft deletion of records
 
 Null: false to migrations???
 
+es6 polyfills
+https://github.com/rails/webpacker/blob/master/docs/es6.md
+
 once deployed:
 https://developers.google.com/speed/pagespeed/insights/
 
@@ -94,3 +108,9 @@ https://github.com/kpumuk/meta-tags
 
 http2
 https://dassur.ma/things/h2setup/
+
+CDN
+
+.env
+http://ddollar.github.io/foreman
+https://github.com/rails/webpacker/blob/master/docs/env.md

@@ -5,12 +5,15 @@ class VenuesController < ApplicationController
   # GET /venues
   # GET /venues.json
   def index
-    @venues = Venue.all
+    @venues = Venue.all.includes(:address)
+    fresh_when(@venues)
   end
 
   # GET /venues/1
   # GET /venues/1.json
-  def show; end
+  def show
+    fresh_when(@venue)
+  end
 
   # GET /venues/new
   def new
