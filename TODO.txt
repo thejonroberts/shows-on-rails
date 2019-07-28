@@ -1,5 +1,6 @@
 users/new goes to registration vs. form....
 
+webpacker javascript_packs_with_chunks_tag
 https://github.com/rails/webpacker/blob/master/docs/webpack-dev-server.md
 https://github.com/rails/webpacker/blob/master/docs/webpack.md
 
@@ -8,7 +9,7 @@ https://developers.google.com/web/fundamentals/performance/why-performance-matte
 error explanations (don't fill in password on user changes?)
  - devise error styles
 
-404 page
+404 / error pages
 
 dashboard
 
