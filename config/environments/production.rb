@@ -24,7 +24,7 @@ Rails.application.configure do
 
   # Compress JavaScripts and CSS.
   # NOTE: no longer using sprockets for asset pipeline, handled by webpacker.
-  # config.assets.js_compressor = :uglifier
+  config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
