@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/corneverbruggen/activerecord-postgis-adapter
+  revision: 433daa15eb11236262d636ef264aba36697ce479
+  branch: activerecord-6.0
+  specs:
+    activerecord-postgis-adapter (5.2.2)
+      activerecord (>= 5.1)
+      rgeo-activerecord (>= 6.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -99,7 +108,7 @@ GEM
     factory_bot_rails (5.0.2)
       factory_bot (~> 5.0.2)
       railties (>= 4.2.0)
-    faker (1.9.6)
+    faker (2.1.0)
       i18n (>= 0.7)
     ffi (1.11.1)
     globalid (0.4.2)
@@ -201,6 +210,10 @@ GEM
     responders (3.0.0)
       actionpack (>= 5.0)
       railties (>= 5.0)
+    rgeo (2.0.1)
+    rgeo-activerecord (6.2.1)
+      activerecord (>= 5.0)
+      rgeo (>= 1.0.0)
     rspec-core (3.8.2)
       rspec-support (~> 3.8.0)
     rspec-expectations (3.8.4)
@@ -218,7 +231,7 @@ GEM
       rspec-mocks (~> 3.8.0)
       rspec-support (~> 3.8.0)
     rspec-support (3.8.2)
-    rubocop (0.73.0)
+    rubocop (0.74.0)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
       parser (>= 2.6)
@@ -295,6 +308,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-postgis-adapter!
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.1.0)
   byebug
@@ -313,6 +327,7 @@ DEPENDENCIES
   rails-controller-testing
   rails-erd
   redis (~> 4.0)
+  rgeo-activerecord (>= 6.2.0)
   rspec-rails
   rubocop
   sass-rails (~> 5.0)
