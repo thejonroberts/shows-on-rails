@@ -24,7 +24,7 @@
             %b= venue.name
           %td
             -# %b.dn-ns Location:
-            = venue.address.present? ? "#{venue.address.city}, #{venue.address.state} #{venue.address.country}" : 'N/A'
+            = venue.address.present? ? venue.address.city_state_country_format : '-'
           %td
             -# %b.dn-ns Site:
             = venue.site_url

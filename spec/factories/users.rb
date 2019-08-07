@@ -3,10 +3,10 @@ FactoryBot.define do
     first_name { Faker::Name.first_name }
     last_name { Faker::Name.last_name }
     display_name do
-      Faker::Internet.username("#{first_name} #{last_name}", %w[. _ -])
+      Faker::Internet.username(specifier: "#{first_name} #{last_name}", separators: %w[. _ -])
     end
     phone { Faker::PhoneNumber.cell_phone }
-    email { Faker::Internet.unique.safe_email(first_name) }
+    email { Faker::Internet.unique.safe_email(name: first_name) }
     password { Faker::Internet.password }
     password_confirmation { password }
     confirmed_at { Date.today }

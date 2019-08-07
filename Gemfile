@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.1'
+ruby '2.6.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.2'
+gem 'rails', '~> 6.0.0.rc2'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
@@ -37,9 +37,12 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'activerecord-postgis-adapter'
+# TODO: check on getting a standard release here:
+# gem 'activerecord-postgis-adapter' NOTE: https://github.com/rgeo/activerecord-postgis-adapter/issues/298
+gem 'activerecord-postgis-adapter', git: 'https://github.com/corneverbruggen/activerecord-postgis-adapter', branch: 'activerecord-6.0'
 gem 'devise'
 gem 'haml-rails', '~> 2.0'
+gem 'rgeo-activerecord', '>= 6.2.0'
 gem 'webpacker', '~> 4.x'
 
 group :development, :test do
@@ -48,8 +51,8 @@ group :development, :test do
 
   gem 'factory_bot_rails'
   gem 'faker'
-  gem 'rails-controller-testing'
-  gem 'rspec-rails'
+  # TODO: get out of beta here:
+  gem 'rspec-rails', '~> 4.0.0.beta'
   gem 'rubocop', require: false
 end
 
