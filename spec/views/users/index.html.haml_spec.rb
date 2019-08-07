@@ -7,7 +7,7 @@ RSpec.describe 'users/index.html.haml', type: :view do
     assign(:users, users)
   end
 
-  it 'renders a list of venues' do
+  it 'renders a list of users' do
     render
     users.each do |user|
       assert_select 'tr>td', text: user.display_name.to_s
