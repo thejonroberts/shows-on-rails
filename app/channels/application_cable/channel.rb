@@ -5,7 +5,6 @@ module ApplicationCable
       stream_from 'channel'
     end
 
-    def unsubscribed
-    end
+    def unsubscribed; end
   end
 end

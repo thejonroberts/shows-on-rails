@@ -2,12 +2,14 @@ require 'rails_helper'
 
 RSpec.describe 'venues/edit', type: :view do
   before(:each) do
-    @venue = assign(:venue, Venue.create!(
-                              name: 'MyString',
-                              site_url: 'MyString',
-                              phone: 'MyString',
-                              email: 'MyString'
-                            ))
+    @venue = assign(
+      :venue, Venue.create!(
+                name:     'MyString',
+                site_url: 'MyString',
+                phone:    'MyString',
+                email:    'MyString'
+              )
+    )
   end
 
   it 'renders the edit venue form' do

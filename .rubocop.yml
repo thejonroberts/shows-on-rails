@@ -1,10 +1,179 @@
 inherit_from: .rubocop_todo.yml
 AllCops:
   Exclude:
-    - db/schema.rb
+    - db/structure.sql
     - db/migrate/**/*
-    - node_modules/**/*
-    - bin/**/*
+    - '**/bin/**/*'
+    - '**/*.yml'
+    - '**/db/**/*'
+    - '**/config/**/*'
+    - '**/bin/**/*'
+    - '**/tmp/**/*'
+    - '**/vendor/**/*'
+    - '**/log/**/*'
+    - '**/node_modules/**/*'
+    - '**/script/**/*'
+    - '**/lib/beachy/reports/excel/**/*'
+    - '**/.pryrc'
+    - '**/config.ru'
+    - '**/Gemfile'
+    - '**/Guardfile'
+    - '**/*.gemspec'
+    - '**/Rakefile'
+    - '**/templates/**/*.rb'
+  TargetRubyVersion: 2.6
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+
+Documentation:
+  Enabled: false
+
+# LAYOUT
+Layout/AlignHash:
+  Enabled: true
+  EnforcedHashRocketStyle: table
+  EnforcedColonStyle: table
+
+Layout/EndAlignment:
+  Enabled: true
+  EnforcedStyleAlignWith: variable
+  AutoCorrect: true
+
+Layout/MultilineAssignmentLayout:
+  Enabled: true
+  EnforcedStyle: new_line
+
+Layout/MultilineOperationIndentation:
+  Enabled: true
+  EnforcedStyle: indented
+
+Layout/MultilineMethodCallIndentation:
+  Enabled: true
+  EnforcedStyle: indented
+
+Layout/SpaceAroundOperators:
+  Enabled: true
+
+Layout/AlignParameters:
+  Enabled: true
+  EnforcedStyle: with_fixed_indentation
+
+Layout/AlignArray:
+  Enabled: true
+
+Layout/FirstMethodArgumentLineBreak:
+  Enabled: true
+
+Layout/CaseIndentation:
+  Enabled: true
+  EnforcedStyle: end
+
+Layout/ClosingParenthesisIndentation:
+  Enabled: true
+
+Layout/IndentFirstArgument:
+  Enabled: true
+
+Layout/IndentFirstArrayElement:
+  Enabled: true
+  EnforcedStyle: consistent
+
+Layout/IndentFirstHashElement:
+  Enabled: true
+  EnforcedStyle: consistent
+
+Layout/IndentFirstParameter:
+  Enabled: true
+
+Layout/MultilineArrayLineBreaks:
+  Enabled: false
+
+Layout/MultilineHashBraceLayout:
+  Enabled: true
+  EnforcedStyle: symmetrical
+
+Layout/MultilineHashKeyLineBreaks:
+  Enabled: true
+
+# LINT
+Lint/UnusedMethodArgument:
+  Enabled: true
+  AllowUnusedKeywordArguments: true
+
+Lint/AmbiguousBlockAssociation:
+  Enabled: true
+  Exclude:
+    - !ruby/regexp /.*\/spec\/.*rb/
+
+Lint/UselessAssignment:
+  Enabled: true
+  Exclude:
+    - !ruby/regexp /.*\/spec\/.*rb/ # NOTE: reassigning let vars
+
+# METRICS
+Metrics/AbcSize:
+  Enabled: true
+  Max: 40
+
 Metrics/BlockLength:
+  Enabled: true
   Exclude:
     - spec/**/*
+
+Metrics/ClassLength:
+  Enabled: true
+  Max: 360
+  Exclude:
+    - !ruby/regexp /.*\/spec\/.*rb/
+
+Metrics/LineLength:
+  Enabled: true
+  Max: 120
+  AutoCorrect: true
+
+Metrics/MethodLength:
+  Enabled: true
+  Max: 30
+
+Metrics/ModuleLength:
+  Enabled: true
+  Max: 360
+  Exclude:
+    - !ruby/regexp /.*\/spec\/.*rb/
+
+# NAMING
+Naming/AccessorMethodName:
+  Enabled: true
+
+Naming/PredicateName:
+  Enabled: true
+
+# STYLE
+Style/ClassAndModuleChildren:
+  Enabled: true
+
+Style/DateTime:
+  Enabled: true
+  AllowCoercion: true
+
+Style/DoubleNegation:
+  Enabled: true
+
+Style/MultilineIfModifier:
+  Enabled: true
+
+Style/MutableConstant:
+  Enabled: true
+
+Style/NestedParenthesizedCalls:
+  Enabled: true
+  Exclude:
+    - !ruby/regexp /.*\/spec\/.*rb/
+
+Style/SignalException:
+  Enabled: true
+  EnforcedStyle: only_fail
+
+Style/TrivialAccessors:
+  Enabled: true
+  IgnoreClassMethods: true

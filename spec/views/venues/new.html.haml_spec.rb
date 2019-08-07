@@ -2,12 +2,14 @@ require 'rails_helper'
 
 RSpec.describe 'venues/new', type: :view do
   before(:each) do
-    assign(:venue, Venue.new(
-                     name: 'MyString',
-                     site_url: 'MyString',
-                     phone: 'MyString',
-                     email: 'MyString'
-                   ))
+    assign(
+      :venue, Venue.new(
+                name:     'MyString',
+                site_url: 'MyString',
+                phone:    'MyString',
+                email:    'MyString'
+              )
+    )
   end
 
   it 'renders new venue form' do

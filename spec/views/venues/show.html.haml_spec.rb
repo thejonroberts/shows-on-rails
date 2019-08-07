@@ -2,12 +2,14 @@ require 'rails_helper'
 
 RSpec.describe 'venues/show', type: :view do
   before(:each) do
-    @venue = assign(:venue, Venue.create!(
-                              name: 'Name',
-                              site_url: 'Site Url',
-                              phone: 'Phone',
-                              email: 'Email'
-                            ))
+    @venue = assign(
+      :venue, Venue.create!(
+                name:     'Name',
+                site_url: 'Site Url',
+                phone:    'Phone',
+                email:    'Email'
+              )
+    )
   end
 
   it 'renders attributes in <p>' do

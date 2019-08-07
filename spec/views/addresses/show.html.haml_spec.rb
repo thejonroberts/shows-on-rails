@@ -2,16 +2,18 @@ require 'rails_helper'
 
 RSpec.describe 'addresses/show', type: :view do
   before(:each) do
-    @address = assign(:address, Address.create!(
-      # addressable: nil,
-      line_one: 'Line One',
-      line_two: 'Line Two',
-      city: 'City',
-      state: 'State',
-      country: 'Country',
-      country_code: 'Country Code',
-      zip_code: 'Zip Code'
-    ))
+    @address = assign(
+      :address, Address.create!(
+        # addressable: nil,
+        line_one:     'Line One',
+        line_two:     'Line Two',
+        city:         'City',
+        state:        'State',
+        country:      'Country',
+        country_code: 'Country Code',
+        zip_code:     'Zip Code'
+      )
+    )
   end
 
   xit 'renders attributes in <p>' do
