@@ -27,13 +27,11 @@ RSpec.describe VenuesController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Venue. As you add validations to Venue, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) do
-    attributes_for(:venue)
-  end
+  let(:valid_attributes) { build(:venue).attributes }
 
   # TODO: invalid params should reload the form with prefilled data.
   let(:invalid_attributes) do
-    valid_attributes[:email] = ''
+    valid_attributes['email'] = nil
     valid_attributes
   end
 
@@ -45,20 +43,24 @@ RSpec.describe VenuesController, type: :controller do
   let(:user) { build_stubbed(:user) }
 
   before do
+    # puts 'ATTRIBUTES', valid_attributes
     sign_in(user)
   end
 
   describe 'GET #index' do
+    let!(:venues) { create_list(:venue, 5) }
+
     it 'returns a success response' do
-      Venue.create! valid_attributes
       get :index, params: {}, session: valid_session
       expect(response).to be_successful
     end
   end
 
   describe 'GET #show' do
+    let(:venue) { create(:venue) }
+
     it 'returns a success response' do
-      venue = Venue.create! valid_attributes
+      # venue = Venue.create! valid_attributes
       get :show, params: { id: venue.to_param }, session: valid_session
       expect(response).to be_successful
     end
@@ -72,8 +74,9 @@ RSpec.describe VenuesController, type: :controller do
   end
 
   describe 'GET #edit' do
+    let!(:venue) { create(:venue) }
+
     it 'returns a success response' do
-      venue = Venue.create! valid_attributes
       get :edit, params: { id: venue.to_param }, session: valid_session
       expect(response).to be_successful
     end
@@ -94,15 +97,10 @@ RSpec.describe VenuesController, type: :controller do
     end
 
     context 'with invalid params' do
-      # TODO: This is more of a behavioral / view test. render template and asserts are gone!
-      xit 're-renders the new template' do
+      it 're-renders the new template' do
+        puts 'ATTRIBUTES', invalid_attributes
         post :create, params: { venue: invalid_attributes }, session: valid_session
-        expect(response).to render_template(:new)
-      end
-
-      xit 'displays the invalid attributes in the rendered template' do
-        post :create, params: { venue: invalid_attributes }, session: valid_session
-        expect(assigns(:venue)).to have_attributes(invalid_attributes)
+        expect(response).to redirect_to(new_venue_path)
       end
     end
   end
@@ -125,17 +123,11 @@ RSpec.describe VenuesController, type: :controller do
     end
 
     context 'with invalid params' do
-      let(:venue) { create(:venue, valid_attributes) }
-      # TODO: this is behavior / view - don't worry about controller internals here. See above.
+      let(:venue) { create(:venue) }
 
-      xit 're-renders the edit template' do
+      it 're-renders the edit template' do
         put :update, params: { id: venue.to_param, venue: invalid_attributes }, session: valid_session
-        expect(response).to render_template(:edit)
-      end
-
-      xit 'displays the original attributes in the rendered template' do
-        put :create, params: { venue: invalid_attributes }, session: valid_session
-        expect(assigns(:venue)).to have_attributes(valid_attributes)
+        expect(response).to redirect_to(edit_venue_path(venue))
       end
     end
   end

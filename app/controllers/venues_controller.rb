@@ -36,10 +36,10 @@ class VenuesController < ApplicationController
     respond_to do |format|
       if @venue.save
         format.html { redirect_to @venue, notice: 'Venue was successfully created.' }
-        format.json { render :show, status: :created, location: @venue }
+        # format.json { render :show, status: :created, location: @venue }
       else
-        format.html { render :new }
-        format.json { render json: @venue.errors, status: :unprocessable_entity }
+        format.html { redirect_to new_venue_path(@venue) }
+        # format.json { render json: @venue.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -48,12 +48,13 @@ class VenuesController < ApplicationController
   # PATCH/PUT /venues/1.json
   def update
     respond_to do |format|
+      puts 'PARAMS', venue_params
       if @venue.update(venue_params)
         format.html { redirect_to @venue, notice: 'Venue was successfully updated.' }
-        format.json { render :show, status: :ok, location: @venue }
+        # format.json { render :show, status: :ok, location: @venue }
       else
-        format.html { render :edit }
-        format.json { render json: @venue.errors, status: :unprocessable_entity }
+        format.html { redirect_to edit_venue_path(@venue) }
+        # format.json { render json: @venue.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -81,8 +82,7 @@ class VenuesController < ApplicationController
       .require(:venue)
       .permit(
         :name, :site_url, :phone, :email,
-        address_attributes: [:line_one, :line_two, :city, :street, :state,
-                             :zip_code, :country]
+        address_attributes: [:line_one, :line_two, :city, :street, :state, :zip_code, :country]
       )
   end
 end

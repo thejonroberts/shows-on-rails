@@ -1,22 +1,17 @@
 require 'rails_helper'
 
 RSpec.describe 'venues/show', type: :view do
+  let(:venue) { create(:venue) }
+
   before(:each) do
-    @venue = assign(
-      :venue, Venue.create!(
-                name:     'Name',
-                site_url: 'Site Url',
-                phone:    'Phone',
-                email:    'Email'
-              )
-    )
+    @venue = assign(:venue, venue)
   end
 
   it 'renders attributes in <p>' do
     render
-    expect(rendered).to match(/Name/)
-    expect(rendered).to match(/Site Url/)
-    expect(rendered).to match(/Phone/)
-    expect(rendered).to match(/Email/)
+    expect(rendered).to match(/#{venue.name}/)
+    expect(rendered).to match(/#{venue.site_url}/)
+    expect(rendered).to match(/#{venue.phone}/)
+    expect(rendered).to match(/#{venue.email}/)
   end
 end

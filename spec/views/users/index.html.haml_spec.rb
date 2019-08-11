@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'users/index.html.haml', type: :view do
-  let(:users) { build_list(:user_with_address, 2) }
+  let(:users) { build_list(:user, 2) }
 
   before(:each) do
     assign(:users, users)
