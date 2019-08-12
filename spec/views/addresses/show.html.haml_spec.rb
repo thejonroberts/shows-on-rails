@@ -1,30 +1,24 @@
 require 'rails_helper'
+require 'support/text_format_helpers'
 
-RSpec.describe 'addresses/show', type: :view do
+RSpec.xdescribe 'addresses/show.html.haml', type: :view do
+  include TextFormatHelpers
+
+  let(:address) { create(:address) }
+
   before(:each) do
-    @address = assign(
-      :address, Address.create!(
-        # addressable: nil,
-        line_one:     'Line One',
-        line_two:     'Line Two',
-        city:         'City',
-        state:        'State',
-        country:      'Country',
-        country_code: 'Country Code',
-        zip_code:     'Zip Code'
-      )
-    )
+    @address = address
   end
 
-  xit 'renders attributes in <p>' do
+  it 'renders attributes in <p>' do
     render
-    # expect(rendered).to match(//)
-    expect(rendered).to match(/Line One/)
-    expect(rendered).to match(/Line Two/)
-    expect(rendered).to match(/City/)
-    expect(rendered).to match(/State/)
-    expect(rendered).to match(/Country/)
-    expect(rendered).to match(/Country Code/)
-    expect(rendered).to match(/Zip Code/)
+
+    expect(rendered).to match(html_regex address.line_one)
+    expect(rendered).to match(html_regex address.line_two)
+    expect(rendered).to match(html_regex address.city)
+    expect(rendered).to match(html_regex address.state)
+    expect(rendered).to match(html_regex address.country)
+    expect(rendered).to match(html_regex address.country_code)
+    expect(rendered).to match(html_regex address.zip_code)
   end
 end

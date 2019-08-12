@@ -48,7 +48,6 @@ class VenuesController < ApplicationController
   # PATCH/PUT /venues/1.json
   def update
     respond_to do |format|
-      puts 'PARAMS', venue_params
       if @venue.update(venue_params)
         format.html { redirect_to @venue, notice: 'Venue was successfully updated.' }
         # format.json { render :show, status: :ok, location: @venue }

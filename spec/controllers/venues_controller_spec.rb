@@ -43,7 +43,6 @@ RSpec.describe VenuesController, type: :controller do
   let(:user) { build_stubbed(:user) }
 
   before do
-    # puts 'ATTRIBUTES', valid_attributes
     sign_in(user)
   end
 
@@ -98,7 +97,6 @@ RSpec.describe VenuesController, type: :controller do
 
     context 'with invalid params' do
       it 're-renders the new template' do
-        puts 'ATTRIBUTES', invalid_attributes
         post :create, params: { venue: invalid_attributes }, session: valid_session
         expect(response).to redirect_to(new_venue_path)
       end

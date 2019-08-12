@@ -1,6 +1,9 @@
 require 'rails_helper'
+require 'support/text_format_helpers'
 
 RSpec.describe 'users/index.html.haml', type: :view do
+  include TextFormatHelpers
+
   let(:users) { build_list(:user, 2) }
 
   before(:each) do

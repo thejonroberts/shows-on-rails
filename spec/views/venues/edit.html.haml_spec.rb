@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'venues/edit', type: :view do
+RSpec.describe 'venues/edit.html.haml', type: :view do
   let(:venue) { create(:venue) }
 
   before(:each) do

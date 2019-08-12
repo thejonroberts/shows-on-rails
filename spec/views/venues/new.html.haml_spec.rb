@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'venues/new', type: :view do
+RSpec.describe 'venues/new.html.haml', type: :view do
   before(:each) do
     @venue = assign(:venue, Venue.new)
   end

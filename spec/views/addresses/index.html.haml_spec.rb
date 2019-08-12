@@ -1,13 +1,17 @@
 require 'rails_helper'
+require 'support/text_format_helpers'
 
-RSpec.describe 'addresses/index', type: :view do
+RSpec.xdescribe 'addresses/index.html.haml', type: :view do
+  include TextFormatHelpers
+
   let(:user) { create(:user_with_address, address_count: 5) }
   let(:addresses) { user.addresses }
+
   before(:each) do
     @addresses = assign(:addresses, addresses)
   end
 
-  xit 'renders a list of addresses' do
+  it 'renders a list of addresses' do
     render
     addresses.each do |address|
       assert_select 'tr>td', text: address.line_one.to_s, count: 1

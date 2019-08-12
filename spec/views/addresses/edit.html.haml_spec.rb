@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'addresses/edit', type: :view do
+RSpec.describe 'addresses/edit.html.haml', type: :view do
   let(:user) { create(:user) }
   let(:address) { user.addresses.first }
   before(:each) do
