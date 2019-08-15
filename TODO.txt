@@ -1,5 +1,7 @@
 users/new goes to registration vs. form....
 
+paginate indices
+
 webpacker javascript_packs_with_chunks_tag
 https://github.com/rails/webpacker/blob/master/docs/webpack-dev-server.md
 https://github.com/rails/webpacker/blob/master/docs/webpack.md
