@@ -54,6 +54,7 @@ group :development, :test do
   # TODO: get out of beta here:
   gem 'rspec-rails', '~> 4.0.0.beta'
   gem 'rubocop', require: false
+  gem 'shoulda-matchers'
 end
 
 group :development do

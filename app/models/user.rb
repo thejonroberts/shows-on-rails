@@ -1,5 +1,8 @@
 # The model for the application user
 class User < ApplicationRecord
+  validates_presence_of :email
+  validates_presence_of :display_name
+
   # Include default devise modules. Others available are:
   # :omniauthable
   devise :database_authenticatable, :registerable, :confirmable, :lockable,
