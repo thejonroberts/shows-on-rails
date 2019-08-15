@@ -5,8 +5,8 @@ FactoryBot.define do
     phone { Faker::PhoneNumber.cell_phone }
     email { Faker::Internet.safe_email }
 
-    after(:create) do |venue, _evaluator|
-      create(:address, addressable: venue)
+    before(:create) do |venue, _evaluator|
+      venue.address = create(:address, addressable: venue)
     end
   end
 end

@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :user do
     first_name { Faker::Name.first_name }
-    last_name { Faker::Name.last_name }
+    last_name  { Faker::Name.last_name }
     display_name do
       Faker::Internet.username(specifier: "#{first_name} #{last_name}", separators: %w[. _ -])
     end
@@ -11,15 +11,14 @@ FactoryBot.define do
     password_confirmation { password }
     confirmed_at { Date.today }
 
-    factory :user_with_address do
-      transient do
-        address_count { 1 }
-      end
-
-      after(:create) do |user, evaluator|
-        create_list(:address, evaluator.address_count, addressable: user)
-      end
+    transient do
+      address_count { 1 }
     end
+
+    before(:create) do |user, evaluator|
+      user.addresses = create_list(:address, evaluator.address_count, addressable: user)
+    end
+
     # NOTE: other devise fields
     # encrypted_password {   }
     # reset_password_token {   }

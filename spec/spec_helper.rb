@@ -92,4 +92,23 @@ RSpec.configure do |config|
   # test failures related to randomization by passing the same `--seed` value
   # as the one that triggered the failure.
   Kernel.srand config.seed
+
+  config.before(:suite) { FactoryBot.reload }
+
+  # Print build strategies to see what is slowing down specs:
+  # https://github.com/thoughtbot/factory_bot/blob/master/GETTING_STARTED.md#activesupport-instrumentation
+  # factory_bot_results = {}
+  # config.before(:suite) do
+  #   ActiveSupport::Notifications.subscribe('factory_bot.run_factory') do |_name, _start, _finish, _id, payload|
+  #     factory_name = payload[:name]
+  #     strategy_name = payload[:strategy]
+  #     factory_bot_results[factory_name] ||= {}
+  #     factory_bot_results[factory_name][strategy_name] ||= 0
+  #     factory_bot_results[factory_name][strategy_name] += 1
+  #   end
+  # end
+
+  # config.after(:suite) do
+  #   puts factory_bot_results
+  # end
 end
