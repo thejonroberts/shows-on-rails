@@ -28,7 +28,7 @@
       = render('/shared/navbar')
       .ph3.ph4-ns
         .message.bg-secondary.off-white
-          #message.notice.pa2
+          #message.notice
         .notice.bg-secondary.off-white
           -if notice.present?
             %p.notice.pa2= notice
@@ -36,6 +36,6 @@
           -if alert.present?
             %p.alert.pa2= alert
     %main.page-content.ph3.ph4-ns
-      .pa4-ns
+      .ph4-ns
         = yield
     = render('/shared/footer')
