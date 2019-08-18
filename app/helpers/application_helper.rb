@@ -1,10 +1,12 @@
 module ApplicationHelper
+  BRAND_TITLE = 'ShowYrOwnWay'.freeze
+
   def brand_title
-    'ShowYrOwnWay'
+    BRAND_TITLE
   end
 
-  def page_title(title, append_brand = true)
-    if title.present?
+  def page_title(title = BRAND_TITLE, append_brand = true)
+    if title.present? && title != BRAND_TITLE
       return title + " | #{brand_title}" if append_brand
 
       title
