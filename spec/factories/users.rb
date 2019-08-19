@@ -15,9 +15,13 @@ FactoryBot.define do
       address_count { 1 }
     end
 
-    before(:create) do |user, evaluator|
-      user.addresses = create_list(:address, evaluator.address_count, addressable: user)
+    trait :with_address do
+      after(:build) do |user, evaluator|
+        user.addresses = build_list(:address, evaluator.address_count, addressable: user)
+      end
     end
+
+    # after(:create, &:confirm!) # when confirmable is in use
 
     # NOTE: other devise fields
     # encrypted_password {   }

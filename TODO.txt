@@ -1,5 +1,7 @@
 users/new goes to registration vs. form....
 
+admin role
+
 paginate indices
 
 webpacker javascript_packs_with_chunks_tag

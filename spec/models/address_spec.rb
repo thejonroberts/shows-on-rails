@@ -9,7 +9,7 @@ RSpec.describe Address, type: :model do
   it { is_expected.to belong_to :addressable }
 
   describe '#city_state_country_format' do
-    let(:user) { create(:user) }
+    let(:user) { create(:user, :with_address) }
     let(:address) { user.address }
 
     subject do

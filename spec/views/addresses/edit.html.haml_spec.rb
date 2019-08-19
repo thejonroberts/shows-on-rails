@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'addresses/edit.html.haml', type: :view do
-  let(:user) { create(:user) }
+  let(:user) { create(:user, :with_address) }
   let(:address) { user.addresses.first }
   before(:each) do
     @address = assign(:address, address)

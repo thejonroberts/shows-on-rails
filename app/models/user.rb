@@ -3,8 +3,7 @@ class User < ApplicationRecord
   validates_presence_of :email
   validates_presence_of :display_name
 
-  # Include default devise modules. Others available are:
-  # :omniauthable
+  # Devise modules. Others available are: :omniauthable
   devise :database_authenticatable, :registerable, :confirmable, :lockable,
          :recoverable, :rememberable, :validatable, :trackable, :timeoutable
 
@@ -19,6 +18,10 @@ class User < ApplicationRecord
   # TODO: add default address_id to user table.
   def address
     addresses.first
+  end
+
+  def build_address
+    addresses << Address.new
   end
 
   def name
