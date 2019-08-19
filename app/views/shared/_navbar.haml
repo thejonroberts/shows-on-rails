@@ -3,7 +3,6 @@
   %a.highlight.b{href: root_url, title: 'Home'}= brand_title
   %a{href: users_path, title: 'Users'} Users
   %a{href: venues_path, title: 'Venues'} Venues
-  %a{href: addresses_path, title: 'Addresses'} Addresses
   - if current_user.present?
     %a{href: '/users/edit', title: 'Profile'} Profile
     = link_to('Logout', '/users/sign_out', method: :delete, title: 'Logout')

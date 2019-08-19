@@ -45,6 +45,8 @@ RSpec.describe VenuesController, type: :controller do
       get :edit, params: { id: venue.to_param }
       expect(response).to be_successful
     end
+
+    xit 'it fails if not owned by current_user'
   end
 
   describe 'POST #create' do
@@ -70,6 +72,8 @@ RSpec.describe VenuesController, type: :controller do
   end
 
   describe 'PUT #update' do
+    xit 'it fails if not owned by current_user'
+
     context 'with valid params' do
       let(:new_attributes) { attributes_for(:venue) }
 
@@ -97,6 +101,8 @@ RSpec.describe VenuesController, type: :controller do
   end
 
   describe 'DELETE #destroy' do
+    xit 'it fails if not owned by current_user'
+
     it 'destroys the requested venue' do
       venue = Venue.create! valid_attributes
       expect do

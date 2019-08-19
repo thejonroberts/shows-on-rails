@@ -1,11 +1,11 @@
 # The model for the application user
 class User < ApplicationRecord
-  validates_presence_of :email
-  validates_presence_of :display_name
-
   # Devise modules. Others available are: :omniauthable
   devise :database_authenticatable, :registerable, :confirmable, :lockable,
          :recoverable, :rememberable, :validatable, :trackable, :timeoutable
+
+  validates_presence_of :email
+  validates_presence_of :display_name
 
   has_many :addresses, as: :addressable, dependent: :destroy
   accepts_nested_attributes_for :addresses
@@ -15,8 +15,8 @@ class User < ApplicationRecord
     false
   end
 
-  # TODO: add default address_id to user table.
   def address
+    # TODO: add default address_id to user table.
     addresses.first
   end
 
@@ -29,6 +29,6 @@ class User < ApplicationRecord
   end
 
   def human_location
-    "#{address.city} #{address.state}, #{address.country}" if address.present?
+    "#{address.city} #{address.state}, #{address.country_code}" if address.present?
   end
 end
