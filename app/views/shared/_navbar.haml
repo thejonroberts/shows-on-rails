@@ -1,6 +1,8 @@
 %nav{ role: :navigation }
-  -#   -#   %img{ src: 'https://picsum.photos/40/40'}
-  %a.highlight.b{href: root_url, title: 'Home'}= brand_title
+
+  %a.highlight.b{href: root_url, title: 'Home'}
+    %img.mw2{ src: '/images/favicon-196x196.png'}
+    %span= brand_title
   %a{href: users_path, title: 'Users'} Users
   %a{href: venues_path, title: 'Venues'} Venues
   - if current_user.present?
