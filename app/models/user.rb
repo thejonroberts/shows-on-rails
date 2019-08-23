@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   validates_presence_of :email
   validates_presence_of :display_name
+  validates_uniqueness_of :email
 
   has_many :addresses, as: :addressable, dependent: :destroy
   accepts_nested_attributes_for :addresses
