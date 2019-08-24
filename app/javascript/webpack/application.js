@@ -12,7 +12,7 @@
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
 // TODO: test image works...
-// const images = require.context('../images', true)
+const images = require.context('../../assets/images', true)
 // const imagePath = (name) => images(name, true)
 
 // import './../../stylesheets/application.scss';
@@ -27,10 +27,11 @@ Rails.start();
 Turbolinks.start();
 ActiveStorage.start();
 
-require('../javascript/channels'); // ActionCable channels
-require('../javascript/components');
+require('../channels'); // ActionCable channels
+require('../components');
+// require('../serviceworker/serviceworker-companion');
 
 // class App {
-  console.log('Hello World from Webpacker tes');
+  console.log('Hello World from Webpacker test');
 // }
 

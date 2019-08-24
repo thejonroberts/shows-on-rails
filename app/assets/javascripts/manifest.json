@@ -1,0 +1,13 @@
+{
+  "short_name": "ShowYrOwnWay",
+  "name": "Show Yr Own Way",
+  "start_url": "/",
+  "scope": "",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "description": "",
+  "theme_color": "#5e2ca5",
+  "orientation": "portrait",
+  "dir": "rtl",
+  "lang": "en-US"
+}
