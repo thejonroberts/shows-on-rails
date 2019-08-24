@@ -23,10 +23,10 @@
     "@rails/activestorage": "^6.0.0-alpha",
     "@rails/ujs": "^6.0.0-alpha",
     "@rails/webpacker": "^4.0.2",
-    "rails-erb-loader": "^5.5.2",
     "turbolinks": "^5.2.0"
   },
   "devDependencies": {
+    "rails-erb-loader": "^5.5.2",
     "tachyons": "^4.11.1",
     "tachyons-sass": "^4.9.5",
     "webpack-dev-server": "^3.3.1"
