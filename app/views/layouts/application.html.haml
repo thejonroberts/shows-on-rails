@@ -2,12 +2,14 @@
 %html{ lang: 'en'}
   %head
     = stylesheet_pack_tag 'stylesheets', 'data-turbolinks-track': 'reload', async: true
-    %link{ rel: "favicon", href: asset_pack_path('media/images/favicon.ico')}
+    %link{ rel: "favicon", href: asset_pack_path('media/images/favicon.ico') }
+    %link{ rel: "manifest", href: '/manifest.json' }
     = action_cable_meta_tag
     = csrf_meta_tags
     = csp_meta_tag
     %meta{ content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type" }
     %meta{ name: "viewport", content: "width=device-width" }
+    %meta{ name: "theme-color", content: "#5e2ca5" }
     - if content_for?(:title)
       %title= page_title(content_for(:title))
     - else
@@ -15,7 +17,6 @@
     - if content_for?(:meta_description)
       %meta{ name: 'Description', content: "#{content_for(:meta_description)}" }
 
-    -# %link{ rel: "manifest", href: '/manifest.js' }
     -# = asset_pack_path 'manifest' #, 'data-turbolinks-track': 'reload', async: true
     -# = javascript_pack_tag 'serviceworker', 'data-turbolinks-track': 'reload', async: true
 
