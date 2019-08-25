@@ -2,11 +2,9 @@ readme
 
 eslint
 dotenv
-http://ddollar.github.io/foreman
 https://github.com/rails/webpacker/blob/master/docs/env.md
 
 table headers sticky
-footer always at bottom - even with little to no content
 Venue + User contact options - by_phone by_email
 
 Phone number standardization
