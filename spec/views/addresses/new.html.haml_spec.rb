@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'addresses/new.html.haml', type: :view do
+RSpec.xdescribe 'addresses/new.html.haml', type: :view do
   before(:each) do
     assign(
       :address, Address.new(

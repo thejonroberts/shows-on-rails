@@ -67,6 +67,6 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  config.action_cable.mount_path = '/channel'
+  config.action_cable.mount_path = '/cable'
 end
 # rubocop:enable Metrics/BlockLength

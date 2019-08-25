@@ -1,34 +1,30 @@
 !!!
 %html{ lang: 'en'}
   %head
-    = favicon_link_tag
+    = stylesheet_pack_tag 'stylesheets', 'data-turbolinks-track': 'reload', async: true
+    %link{ rel: "favicon", href: asset_pack_path('media/images/favicon.ico') }
+    %link{ rel: "manifest", href: '/manifest.json' }
     = action_cable_meta_tag
+    = csrf_meta_tags
+    = csp_meta_tag
+    %meta{ content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type" }
+    %meta{ name: "viewport", content: "width=device-width" }
+    %meta{ name: "theme-color", content: "#5e2ca5" }
     - if content_for?(:title)
       %title= page_title(content_for(:title))
     - else
       %title= brand_title
-
     - if content_for?(:meta_description)
       %meta{ name: 'Description', content: "#{content_for(:meta_description)}" }
 
-    %meta{ name: "theme-color", content: "#5e2ca5" }
-
-    %meta{ content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type" }
-    %meta{ name: "viewport", content: "width=device-width" }
-
-    = csrf_meta_tags
-    = csp_meta_tag
-
-    -# = javascript_pack_tag 'vendor', 'data-turbolinks-track': 'reload', async: true
+    = javascript_pack_tag 'serviceworker-companion', 'data-turbolinks-track': 'reload', async: true
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', async: true
-    -# = stylesheet_pack_tag 'vendor', 'data-turbolinks-track': 'reload', async: true
-    = stylesheet_pack_tag 'stylesheets', 'data-turbolinks-track': 'reload', async: true
   %body
     %header
       = render('/shared/navbar')
       .ph3.ph4-ns
         .message.bg-secondary.off-white
-          #message.notice.pa2
+          #message.notice
         .notice.bg-secondary.off-white
           -if notice.present?
             %p.notice.pa2= notice
@@ -36,6 +32,6 @@
           -if alert.present?
             %p.alert.pa2= alert
     %main.page-content.ph3.ph4-ns
-      .pa4-ns
+      .ph4-ns
         = yield
     = render('/shared/footer')

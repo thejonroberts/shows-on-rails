@@ -1,4 +1,13 @@
+serviceworker loads wrong application.js pack?
+problem with favicon as well...
+
+icon in nav causes jitter - min size?
+
 users/new goes to registration vs. form....
+
+admin role
+
+paginate indices
 
 webpacker javascript_packs_with_chunks_tag
 https://github.com/rails/webpacker/blob/master/docs/webpack-dev-server.md
@@ -114,3 +123,15 @@ CDN
 .env
 http://ddollar.github.io/foreman
 https://github.com/rails/webpacker/blob/master/docs/env.md
+
+
+manifest erb icons
+"icons": [
+   <% icon_sizes.map { |s| "#{s}x#{s}" }.each.with_index do |dim, i| %>
+    {
+      "src": "<%= asset_pack_path "icon#{dim}.png" %>",
+      "sizes": "<%= dim %>",
+      "type": "image/png"
+    }<%= i == (icon_sizes.length - 1) ? '' : ',' %>
+  <% end %>
+  ]

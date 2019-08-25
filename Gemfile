@@ -37,6 +37,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+gem 'serviceworker-rails'
+
 # TODO: check on getting a standard release here:
 # gem 'activerecord-postgis-adapter' NOTE: https://github.com/rgeo/activerecord-postgis-adapter/issues/298
 gem 'activerecord-postgis-adapter', git: 'https://github.com/corneverbruggen/activerecord-postgis-adapter', branch: 'activerecord-6.0'
@@ -73,6 +75,7 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'database_cleaner'
   gem 'selenium-webdriver'
+  gem 'simplecov', require: false
   # Easy installation and use of chromedriver to run system tests with Chrome
   # gem 'chromedriver-helper'
   # Post-install message from chromedriver-helper:
