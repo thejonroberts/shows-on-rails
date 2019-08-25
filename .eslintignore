@@ -1,0 +1,4 @@
+/bin/*
+/coverage/**/*
+/public/packs/**/*
+/public/packs-test/**/*
