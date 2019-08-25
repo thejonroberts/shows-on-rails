@@ -17,11 +17,6 @@
     - if content_for?(:meta_description)
       %meta{ name: 'Description', content: "#{content_for(:meta_description)}" }
 
-    -# = asset_pack_path 'manifest' #, 'data-turbolinks-track': 'reload', async: true
-    -# = javascript_pack_tag 'serviceworker', 'data-turbolinks-track': 'reload', async: true
-
-    -# = stylesheet_pack_tag 'vendor', 'data-turbolinks-track': 'reload', async: true
-    -# = javascript_pack_tag 'vendor', 'data-turbolinks-track': 'reload', async: true
     = javascript_pack_tag 'serviceworker-companion', 'data-turbolinks-track': 'reload', async: true
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', async: true
   %body

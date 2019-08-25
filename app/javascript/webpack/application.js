@@ -27,11 +27,13 @@ Rails.start();
 Turbolinks.start();
 ActiveStorage.start();
 
+// TODO: should these go in individual components???
+// require('../components');
 require('../channels'); // ActionCable channels
-require('../components');
+// TODO: should this go here instead of separate file???
 // require('../serviceworker/serviceworker-companion');
 
 // class App {
-  console.log('Hello World from Webpacker test');
+  console.log('Hello World');
 // }
 

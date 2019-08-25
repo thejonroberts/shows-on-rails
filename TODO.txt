@@ -1,3 +1,8 @@
+serviceworker loads wrong application.js pack?
+problem with favicon as well...
+
+icon in nav causes jitter - min size?
+
 users/new goes to registration vs. form....
 
 admin role

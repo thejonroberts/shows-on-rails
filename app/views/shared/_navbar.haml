@@ -1,8 +1,7 @@
 %nav{ role: :navigation }
 
   %a.highlight.b{href: root_url, title: 'Home'}
-    -# TODO: why media/ here???
-    %img.mw2{ src: asset_pack_path('media/images/favicon-196x196.png')}
+    %img.mw2{ src: asset_pack_path('media/images/favicon-196x196.png'), alt: 'ShowYrOwnWay logo (Yr)'}
     %span= brand_title
   %a{href: users_path, title: 'Users'} Users
   %a{href: venues_path, title: 'Venues'} Venues
