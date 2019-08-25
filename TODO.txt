@@ -1,12 +1,10 @@
 readme
 
 eslint
-nvmrc
 dotenv
 http://ddollar.github.io/foreman
 https://github.com/rails/webpacker/blob/master/docs/env.md
 
-icon in nav causes jitter - min size?
 table headers sticky
 footer always at bottom - even with little to no content
 Venue + User contact options - by_phone by_email
