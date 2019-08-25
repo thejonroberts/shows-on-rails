@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Base class for the Venue Model
 class Venue < ApplicationRecord
   validates :name, presence: true

@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 # Controller for Venues base
 class VenuesController < ApplicationController
-  before_action :set_venue, only: [:show, :edit, :update, :destroy]
+  before_action :set_venue, only: %i[show edit update destroy]
 
   # GET /venues
   # GET /venues.json
@@ -79,7 +81,7 @@ class VenuesController < ApplicationController
       .require(:venue)
       .permit(
         :name, :site_url, :phone, :email,
-        address_attributes: [:line_one, :line_two, :city, :street, :state, :zip_code, :country]
+        address_attributes: %i[line_one line_two city street state zip_code country]
       )
   end
 end

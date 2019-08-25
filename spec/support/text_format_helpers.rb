@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module TextFormatHelpers
   def escaped_string(string)
     CGI.escape(string)

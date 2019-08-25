@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # The model for the application user
 class User < ApplicationRecord
   # Devise modules. Others available are: :omniauthable

@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 # User controller (not devise)
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: %i[show edit update]
 
   # GET /users
   # GET /users.json
@@ -40,8 +42,8 @@ class UsersController < ApplicationController
       .require(:user)
       .permit(
         :first_name, :last_name, :display_name, :phone,
-        address_attributes: [:line_one, :line_two, :city, :street, :state,
-                             :zip_code, :country]
+        address_attributes: %i[line_one line_two city street state
+                               zip_code country]
       )
   end
 end
