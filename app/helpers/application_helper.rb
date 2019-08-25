@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 module ApplicationHelper
-  BRAND_TITLE = 'ShowYrOwnWay'.freeze
+  BRAND_TITLE = 'ShowYrOwnWay'
 
   def brand_title
     BRAND_TITLE

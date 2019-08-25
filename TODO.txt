@@ -1,7 +1,5 @@
-navbar vertical centering
 readme
 
-fix rubocop auto-config todo formatting issues (from rails new)
 eslint
 nvmrc
 dotenv

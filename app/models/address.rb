@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Postal Address and Geographic information
 class Address < ApplicationRecord
   validates :city, presence: true
