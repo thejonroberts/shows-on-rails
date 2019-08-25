@@ -1,10 +1,8 @@
 readme
 
-eslint
 dotenv
 https://github.com/rails/webpacker/blob/master/docs/env.md
 
-table headers sticky
 Venue + User contact options - by_phone by_email
 
 Phone number standardization
@@ -48,8 +46,8 @@ Soft deletion of records
 pagination
 https://github.com/kaminari/kaminari
 
-
-remove comments / uglify js + css in inwebpacker (sourcemaps?)
+table headers sticky
+remove comments / uglify js + css in in webpacker (sourcemaps?)
 
 email styling
 testing emails: https://github.com/ryanb/letter_opener
