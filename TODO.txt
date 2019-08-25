@@ -1,44 +1,17 @@
-serviceworker loads wrong application.js pack?
-problem with favicon as well...
-
-icon in nav causes jitter - min size?
-
-users/new goes to registration vs. form....
-
-admin role
-
-paginate indices
-
-webpacker javascript_packs_with_chunks_tag
-https://github.com/rails/webpacker/blob/master/docs/webpack-dev-server.md
-https://github.com/rails/webpacker/blob/master/docs/webpack.md
-
-https://developers.google.com/web/fundamentals/performance/why-performance-matters/
-
-error explanations (don't fill in password on user changes?)
- - devise error styles
-
-404 / error pages
-
-dashboard
-
-user preferred address id
-
+navbar vertical centering
 readme
 
-debugging https://github.com/rails/webpacker/blob/master/docs/troubleshooting.md
+fix rubocop auto-config todo formatting issues (from rails new)
+eslint
+nvmrc
+dotenv
+http://ddollar.github.io/foreman
+https://github.com/rails/webpacker/blob/master/docs/env.md
 
-remove address views - only through user / venue
-- replaced with map of venues + bands.
-
-dependabot
-
-pagination
+icon in nav causes jitter - min size?
 table headers sticky
-
-footer always at bottom
-
-allow non-http:// web urls
+footer always at bottom - even with little to no content
+Venue + User contact options - by_phone by_email
 
 Phone number standardization
   current address country_code works?  put on user / add user method.
@@ -48,34 +21,41 @@ Address input standardization:
   country code selection dropdown.
   verification on upload?
 
+error explanations (don't fill in password on user changes?)
+ - devise error styles
+
+404 / error / offline pages
+
+friendly_ids / urls
+https://github.com/norman/friendly_id
+
+admin role
+user preferred address id
+
 Created by user id for user generated content:
 + managed_by_user_id
   - venues, bands, etc..
   - will require soft_deletion of users?
     - or transfer to admin / default user?  unmanaged scope?
 
-Venue + User contact options - by_phone by_email
-superuser
 PIctures - most models
 
-eslint
-nvmrc
-dotenv
+dashboard
 
-account info - devise - user account route???
+i18n basics
+  - submit button
 
-admin role - boolean on user.
+Null: false to migrations???
 
-remove comments / uglify js + css in inwebpacker (sourcemaps?)
-
-fix rubocop auto-config todo formatting issues (from rails new)
-specs
+Soft deletion of records
+  https://github.com/jhawthorn/discard (vs. paranoia gem)
+  - most of them?
 
 pagination
 https://github.com/kaminari/kaminari
 
-friendly_ids / urls
-https://github.com/norman/friendly_id
+
+remove comments / uglify js + css in inwebpacker (sourcemaps?)
 
 email styling
 testing emails: https://github.com/ryanb/letter_opener
@@ -85,17 +65,6 @@ https://github.com/plataformatec/devise/wiki/How-To:-Add-an-Admin-role
 https://github.com/plataformatec/devise/wiki/How-To:-Add-a-default-role-to-a-User
 https://github.com/plataformatec/devise/wiki/How-To:-Add-sign_in,-sign_out,-and-sign_up-links-to-your-layout-template
 https://github.com/plataformatec/devise/wiki/How-to:-Soft-delete-a-user-when-user-deletes-account
-
-i18n basics
-  - submit button
-
-
-
-Soft deletion of records
-  https://github.com/jhawthorn/discard (vs. paranoia gem)
-  - most of them?
-
-Null: false to migrations???
 
 es6 polyfills
 https://github.com/rails/webpacker/blob/master/docs/es6.md
@@ -109,7 +78,11 @@ language
 license
 contribute
 
-logo + favicon
+webpacker javascript_packs_with_chunks_tag
+https://github.com/rails/webpacker/blob/master/docs/webpack-dev-server.md
+https://github.com/rails/webpacker/blob/master/docs/webpack.md
+
+https://developers.google.com/web/fundamentals/performance/why-performance-matters/
 
 SEO / meta tags
 https://nithinbekal.com/posts/rails-page-titles/
@@ -119,19 +92,4 @@ http2
 https://dassur.ma/things/h2setup/
 
 CDN
-
-.env
-http://ddollar.github.io/foreman
-https://github.com/rails/webpacker/blob/master/docs/env.md
-
-
-manifest erb icons
-"icons": [
-   <% icon_sizes.map { |s| "#{s}x#{s}" }.each.with_index do |dim, i| %>
-    {
-      "src": "<%= asset_pack_path "icon#{dim}.png" %>",
-      "sizes": "<%= dim %>",
-      "type": "image/png"
-    }<%= i == (icon_sizes.length - 1) ? '' : ',' %>
-  <% end %>
-  ]
+serviceworker loads wrong application.js pack - not if bin/rails compiles webpack!!!
