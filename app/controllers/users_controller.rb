@@ -42,8 +42,7 @@ class UsersController < ApplicationController
       .require(:user)
       .permit(
         :first_name, :last_name, :display_name, :phone,
-        address_attributes: %i[line_one line_two city street state
-                               zip_code country]
+        address_attributes: %i[line_one line_two city street state zip_code country]
       )
   end
 end

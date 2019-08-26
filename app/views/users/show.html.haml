@@ -9,7 +9,7 @@
   = "#{@user.first_name} #{@user.last_name}"
 %p
   %b Phone:
-  = @venue.phone.phony_formatted(format: :national, spaces: ' ')
+  = @user.phone.phony_formatted(format: :national, spaces: ' ')
 %p
   %b Email:
   = @user.email

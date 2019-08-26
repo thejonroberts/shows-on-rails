@@ -12,4 +12,12 @@ module TextFormatHelpers
   def html_regex(string)
     /#{Regexp.quote CGI.escapeHTML(string)}/
   end
+
+  def normalized_phone(phone)
+    PhonyRails.normalize_number(phone, cc: '1')
+  end
+
+  def formatted_phone(phone)
+    phone.phony_formatted(format: :national, spaces: ' ')
+  end
 end

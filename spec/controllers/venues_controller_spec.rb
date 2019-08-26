@@ -1,8 +1,12 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
+require 'support/text_format_helpers'
 
 RSpec.describe VenuesController, type: :controller do
+  include TextFormatHelpers
+
+  let(:venue) { create(:venue) }
   let(:valid_attributes) { build(:venue).attributes }
   let(:invalid_attributes) do
     valid_attributes['email'] = nil
@@ -80,8 +84,8 @@ RSpec.describe VenuesController, type: :controller do
       let(:new_attributes) { attributes_for(:venue) }
 
       it 'updates the requested venue' do
-        venue = Venue.create! valid_attributes
         put :update, params: { id: venue.to_param, venue: new_attributes }
+        new_attributes[:phone] = normalized_phone(new_attributes[:phone])
         expect(venue.reload).to have_attributes(new_attributes)
       end
 
@@ -93,8 +97,6 @@ RSpec.describe VenuesController, type: :controller do
     end
 
     context 'with invalid params' do
-      let(:venue) { create(:venue) }
-
       it 're-renders the edit template' do
         put :update, params: { id: venue.to_param, venue: invalid_attributes }
         expect(response).to redirect_to(edit_venue_path(venue))
