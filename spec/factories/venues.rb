@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
+  Faker::Config.locale = 'en-US'
+
   factory :venue do
     name { Faker::Restaurant.name }
     site_url { 'http://www.' + Faker::Internet.domain_name }

@@ -9,7 +9,8 @@
   = @venue.site_url
 %p
   %b Phone:
-  = @venue.phone
+  = @venue.phone.phony_formatted(format: :national, spaces: ' ')
+
 %p
   %b Email:
   = @venue.email

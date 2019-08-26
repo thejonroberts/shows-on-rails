@@ -10,6 +10,9 @@ class User < ApplicationRecord
   validates_presence_of :display_name
   validates_uniqueness_of :email
 
+  validates :phone, phony_plausible: true
+  phony_normalize :phone, default_country_code: 'US'
+
   has_many :addresses, as: :addressable, dependent: :destroy
   accepts_nested_attributes_for :addresses
 
