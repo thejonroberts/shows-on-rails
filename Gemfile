@@ -25,7 +25,7 @@ gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-# Use ActiveStorage variant
+# Use ActiveStorage variant NOTE: changes in rails 6?
 # gem 'mini_magick', '~> 4.8'
 
 # Use Capistrano for deployment
@@ -42,6 +42,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'activerecord-postgis-adapter', git: 'https://github.com/corneverbruggen/activerecord-postgis-adapter', branch: 'activerecord-6.0'
 gem 'devise'
 gem 'haml-rails', '~> 2.0'
+gem 'phony'
 gem 'phony_rails'
 gem 'rgeo-activerecord', '>= 6.2.0'
 gem 'serviceworker-rails'
