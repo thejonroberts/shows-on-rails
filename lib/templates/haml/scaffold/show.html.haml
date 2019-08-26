@@ -8,6 +8,6 @@
 <% end -%>
 %button
   = link_to 'Back', <%= index_helper %>_path
-- if current_user&.superuser?
+- if current_user&.admin?
   %button
     = link_to 'Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>)

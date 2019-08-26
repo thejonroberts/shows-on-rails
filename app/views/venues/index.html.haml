@@ -12,7 +12,7 @@
         -# %th Phone
         -# %th Email
         %th
-        - if current_user&.superuser?
+        - if current_user&.admin?
           %th
           %th
 
@@ -37,7 +37,7 @@
           %td
             %button
               = link_to 'View', venue
-          - if current_user&.superuser?
+          - if current_user&.admin?
             -# TODO: access control - managed_by_user ? soft delete?
             %td
               %button
