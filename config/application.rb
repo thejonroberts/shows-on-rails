@@ -20,5 +20,10 @@ module Shows
     config.active_record.schema_format = :sql
 
     config.generators.template_engine = :haml
+
+    # Phony / PhonyRails - limit to supported countries to limit memory usage
+    # NOTE: not sure that PhonyRails doesn't override this...
+    Phony::Config.load(only: ['US'])
+    PhonyRails.default_country_code = 'US'
   end
 end

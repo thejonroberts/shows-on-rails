@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
+  Faker::Config.locale = 'en-US'
+
   factory :user do
     first_name { Faker::Name.first_name }
     last_name  { Faker::Name.last_name }
@@ -11,7 +13,7 @@ FactoryBot.define do
     email { Faker::Internet.unique.safe_email(name: first_name) }
     password { Faker::Internet.password }
     password_confirmation { password }
-    confirmed_at { Date.today }
+    confirmed_at { Time.now }
 
     transient do
       address_count { 1 }

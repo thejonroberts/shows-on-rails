@@ -25,7 +25,7 @@ gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-# Use ActiveStorage variant
+# Use ActiveStorage variant NOTE: changes in rails 6?
 # gem 'mini_magick', '~> 4.8'
 
 # Use Capistrano for deployment
@@ -37,14 +37,15 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'serviceworker-rails'
-
 # TODO: check on getting a standard release here:
 # gem 'activerecord-postgis-adapter' NOTE: https://github.com/rgeo/activerecord-postgis-adapter/issues/298
 gem 'activerecord-postgis-adapter', git: 'https://github.com/corneverbruggen/activerecord-postgis-adapter', branch: 'activerecord-6.0'
 gem 'devise'
 gem 'haml-rails', '~> 2.0'
+gem 'phony'
+gem 'phony_rails'
 gem 'rgeo-activerecord', '>= 6.2.0'
+gem 'serviceworker-rails'
 gem 'webpacker', '~> 4.x'
 
 group :development, :test do

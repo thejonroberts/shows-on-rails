@@ -18,6 +18,6 @@ RSpec.describe 'venues/show.html.haml', type: :view do
     expect(rendered).to match(html_regex venue.name)
     expect(rendered).to match(html_regex venue.site_url)
     expect(rendered).to match(html_regex venue.email)
-    expect(rendered).to match(html_regex venue.phone)
+    expect(rendered).to match(html_regex formatted_phone(venue.phone))
   end
 end

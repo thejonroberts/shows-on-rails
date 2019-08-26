@@ -3,13 +3,13 @@ readme
 dotenv
 https://github.com/rails/webpacker/blob/master/docs/env.md
 
-Venue + User contact options - by_phone by_email
+Venue + User contact options - by_phone + by_email
+user edit superuse only
+non-devise fields on user profile edit page
 
-Phone number standardization
-  current address country_code works?  put on user / add user method.
-  https://github.com/joost/phony_rails
 
 Address input standardization:
+  current address country_code works?  put on user / add user method.
   country code selection dropdown.
   verification on upload?
 
@@ -31,6 +31,7 @@ Created by user id for user generated content:
     - or transfer to admin / default user?  unmanaged scope?
 
 PIctures - most models
+ - activestorage / image optimization
 
 dashboard
 
