@@ -10,7 +10,7 @@
         %th <%= attribute.human_name %>
 <% end -%>
         %th
-        - if current_user&.superuser?
+        - if current_user&.admin?
           %th
           %th
     %tbody
@@ -22,7 +22,7 @@
           %td
             %button
               = link_to('View', <%= singular_table_name %>)
-          - if current_user&.superuser?
+          - if current_user&.admin?
             %td
               %button
                 = link_to( 'Edit', edit_<%= singular_table_name %>_path(<%= singular_table_name %>))
