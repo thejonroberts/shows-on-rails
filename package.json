@@ -27,7 +27,7 @@
     "webpack": "^4.39.2"
   },
   "devDependencies": {
-    "eslint": "^6.2.2",
+    "eslint": "^6.7.1",
     "tachyons": "^4.11.1",
     "tachyons-sass": "^4.9.5",
     "webpack-dev-server": "^3.3.1"
