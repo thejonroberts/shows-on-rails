@@ -1,0 +1,73 @@
+version: 2
+updates:
+- package-ecosystem: bundler
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "11:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: phony
+    versions:
+    - 2.18.18
+    - 2.18.19
+    - 2.18.20
+    - 2.18.21
+  - dependency-name: bootsnap
+    versions:
+    - 1.6.0
+    - 1.7.0
+    - 1.7.1
+    - 1.7.2
+    - 1.7.3
+  - dependency-name: nokogiri
+    versions:
+    - 1.11.1
+    - 1.11.2
+  - dependency-name: faker
+    versions:
+    - 2.15.1
+    - 2.16.0
+  - dependency-name: capybara
+    versions:
+    - 3.35.1
+  - dependency-name: loofah
+    versions:
+    - 2.9.0
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "11:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: eslint
+    versions:
+    - 7.18.0
+    - 7.19.0
+    - 7.20.0
+    - 7.21.0
+    - 7.22.0
+    - 7.23.0
+    - 7.24.0
+  - dependency-name: "@rails/ujs"
+    versions:
+    - 6.1.1
+    - 6.1.2
+  - dependency-name: "@rails/activestorage"
+    versions:
+    - 6.1.1
+    - 6.1.2
+  - dependency-name: "@rails/actioncable"
+    versions:
+    - 6.1.1
+    - 6.1.2
+  - dependency-name: "@rails/webpacker"
+    versions:
+    - 5.2.1
+  - dependency-name: lodash
+    versions:
+    - 4.17.20
+  - dependency-name: elliptic
+    versions:
+    - 6.5.3
